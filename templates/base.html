@@ -1,0 +1,218 @@
+{% load static  %}
+{% load i18n %}
+
+
+{% get_current_language as LANGUAGE_CODE %}
+
+
+<!DOCTYPE html>
+<html class="loading" lang="ar" data-textdirection="rtl" >
+<!-- BEGIN: Head-->
+
+
+
+{% block appheader %}
+
+{% endblock appheader %}
+
+
+
+
+<body
+    class="horizontal-layout horizontal-menu  content-detached-left-sidebar ecommerce-application navbar-floating footer-static  "
+    data-open="hover" data-menu="horizontal-menu" data-col="content-detached-left-sidebar" style="background-color: #f1f1f1;"><!-- #dcebef-->
+
+
+    <!-- BEGIN: Header-->
+    {% include 'main/navbar.html' %}
+    <!-- END: Header-->
+
+
+    <!-- BEGIN: Main Menu-->
+    <div class="horizontal-menu-wrapper">
+        <div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-without-dd-arrow navbar-shadow menu-border"
+            role="navigation" data-menu="menu-wrapper">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav flex-row" id='navid'>
+                    <li class="nav-item mr-auto"><a class="navbar-brand" href="{% url 'main:home'%}">
+                            <div class="">
+                                <img src="{% static  '/images/2-t.png'%}" class="img-fluid" alt="Brand logo">
+                            </div>
+
+                            <h2 class="brand-text mb-0">  فيرفاري -للشحن </h2>
+                        </a></li>
+                    <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                                class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i
+                                class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary"
+                                data-ticon="icon-disc"></i></a></li>
+                </ul>
+            </div>
+            <!-- Horizontal menu content-->
+            <div class="navbar-container main-menu-content" data-menu="menu-container">
+                <!-- include ../includes/mixins-->
+                <ul class="nav navbar-nav " id="main-menu-navigation" data-menu="menu-navigation">
+                    <li class=" dropdown nav-item {% if '/ ' in request.path %} active {% endif %}" id="ullihomeactive" data-menu=""><a class=" nav-link "
+                            href="{% url 'main:home'%}" data-toggle=""><i class="feather icon-home "></i><span
+                                data-i18n="">  الرئيسية </span></a>
+
+                    </li>
+                   
+                    <li class="dropdown nav-item {% if '/products' in request.path %} active {% endif %}" id="ulliservicesactive" data-menu=""><a class="nav-link"
+                            href="" data-toggle=""><i
+                                class="feather icon-briefcase"></i><span data-i18n="UI Elements">
+                                 الشحن </span></a>
+                                 <ul class="dropdown-menu">
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'main:express'%}"  data-toggle="" data-i18n="Profile"><i
+                                                class="feather icon-package"></i> المستندات والطرود </a>
+                                    </li>
+                                    <li data-menu=""><a class="dropdown-item" href="{% url 'main:forwarding'%}" data-toggle="dropdown"
+                                            data-i18n="Account Settings"><i class="feather icon-bar-chart"></i>
+                                            المنصات النقالة والحاويات والبضائع </a>
+                                    </li>
+                                   
+        
+                                </ul>
+
+                    </li>
+                    <li class="dropdown nav-item {% if '/companies' in request.path %} active {% endif %}" id="ullicompaniesactive" data-menu=""><a class=" nav-link"
+                        href="{% url 'main:branches'%}" data-toggle=""><i class="feather icon-globe" ></i><span
+                                data-i18n="Forms &amp; Tables">  الفروع </span></a>
+
+                    </li>
+                    <li class="dropdown nav-item {% if '/companies' in request.path %} active {% endif %}" id="ullicompaniesactive" data-menu=""><a class=" nav-link"
+                        href="{% url 'main:faq'%}" data-toggle=""><i class="feather icon-help-circle" ></i><span
+                                data-i18n="Forms &amp; Tables">  الاسئلة الاكثر تداولاً </span></a>
+
+                    </li>
+                    <li class="dropdown nav-item {% if '/scan' in request.path %} active {% endif %}" id="ullicompaniesactive" data-menu=""><a class=" nav-link"
+                        href="{% url 'main:barcode_scanner'%}" data-toggle=""><i class="feather icon-help-circle" ></i><span
+                                data-i18n="Forms &amp; Tables">مسح الباركود</span></a>
+
+                    </li>
+                    <li class="dropdown nav-item {% if '/scan' in request.path %} active {% endif %}" id="ullicompaniesactive" data-menu=""><a class=" nav-link"
+                        href="{% url 'main:barcode_scannergemini'%}" data-toggle=""><i class="feather icon-help-circle" ></i><span
+                                data-i18n="Forms &amp; Tables">مسح الباركود2</span></a>
+
+                    </li>
+
+                   
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- BEGIN: Content-->
+    {% block appbody %}
+
+    {% endblock appbody %}
+
+
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+
+
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-light navbar-shadow" style="background-color: #ffffff;">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-7 offset-md-1 offset-lg-0">
+                    <!-- About -->
+                    <div class="block about ">
+                        <!-- footer logo 
+          <img src="images/logo1.png" height="100" alt="">
+		  -->
+                        <!-- description -->
+                        <a href="">
+                            <h1 class="alt-color"> نظام تنظيم ومتابعة نقل الطرود  </h1>
+                        </a>
+                        <p class="alt-color">
+                           {{footer.valueText}}
+                        </p>
+                    </div>
+                </div>
+                <!-- Link list -->
+                <div class="col-lg-2 offset-lg-1 col-md-3 ">
+                    <div class="block">
+                        <!-- <h4>الصفحات</h4>-->
+                        <ul class="ul-without-bullets center">
+                            <li>
+                                <a href=""> 'Home' </a>
+                            </li>
+
+                            <li>
+                                <a href=""> 'Products and Services' </a>
+                            </li>
+                            <li>
+                                <a href=""> 'Companies' </a>
+                            </li>
+
+                            <li>
+                                <a href="#"> 'Contact Us' </a>
+                            </li>
+                            <li>
+                                <a href="#">'About Us' </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <p class="clearfix blue-grey lighten-2 mb-0"><span class="float-md-left d-block d-md-inline-block mt-25"> All rights reserved </span><span
+                class="float-md-right d-none d-md-block">COPYRIGHT
+                &copy; <script>
+                    var CurrentYear = new Date().getFullYear()
+                    document.write(CurrentYear)
+                </script></span>
+            <button class="btn btn-primary btn-icon scroll-top" type="button"><i
+                    class="feather icon-arrow-up"></i></button>
+        </p>
+    </footer>
+    <!-- END: Footer-->
+
+
+
+
+
+    {% block appfooter %}
+
+    {% endblock appfooter %}
+
+
+<!--
+
+    <script>
+        var a = document.querySelectorAll("#navid li a");
+        for (var i = 0, length = a.length; i < length; i++) {
+            console.log('nav script')
+            console.log(a)
+            a[i].onclick = function () {
+                var b = document.querySelector("#navid li.active");
+                console.log(b)
+                if (b) b.classList.remove("active");
+                this.parentNode.classList.add('active');
+            };
+        }
+    </script>
+    -->
+
+   
+
+
+
+</body>
+<!-- END: Body-->
+
+</html>
+

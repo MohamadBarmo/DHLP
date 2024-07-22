@@ -1,0 +1,60 @@
+<!-- barcode_scanner.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Scanner</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/instascan/1.0.0/instascan.min.js"></script>
+    <style>
+        #interactive {
+            position: relative;
+            width: 100%;
+        }
+        #interactive video {
+            width: 100%;
+        }
+        #barcode-result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scan Barcode</h1>
+    <div id="interactive" class="viewport">
+        <video id="preview" width="300" height="200" style="border: 1px solid gray"></video>
+    </div>
+    <div id="barcode-result">Waiting for barcode...</div>
+    <script>
+        window.addEventListener('load', function() {
+            let scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false });
+            scanner.addListener('scan', function (content) {
+                console.log(content);
+                document.getElementById('barcode-result').innerText = `Barcode detected: ${content}`;
+                alert(`Barcode detected: ${content}`);
+            });
+
+            Instascan.Camera.getCameras().then(function (cameras) {
+                if (cameras.length > 0) {
+                    let selectedCamera = cameras[0];
+                    // Select the back camera if available
+                    cameras.forEach(camera => {
+                        if (camera.name.toLowerCase().includes('back')) {
+                            selectedCamera = camera;
+                        }
+                    });
+                    scanner.start(selectedCamera);
+                } else {
+                    console.error('No cameras found.');
+                    document.getElementById('barcode-result').innerText = 'No cameras found.';
+                }
+            }).catch(function (e) {
+                console.error(e);
+                document.getElementById('barcode-result').innerText = `Error: ${e}`;
+            });
+        });
+    </script>
+</body>
+</html>

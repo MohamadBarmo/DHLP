@@ -1,0 +1,431 @@
+{% extends 'base.html' %} {% load static %} {% block appheader %}
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+  />
+  <meta
+    name="description"
+    content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities."
+  />
+  <meta
+    name="keywords"
+    content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
+  />
+  <meta name="author" content="PIXINVENT" />
+  <title>نظام تنظيم ومتابعة نقل الطرود</title>
+  <link
+    rel="apple-touch-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600"
+    rel="stylesheet"
+  />
+
+  <!-- BEGIN: Vendor CSS-->
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/extensions/nouislider.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/ui/prism.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/forms/select/select2.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/extensions/swiper.min.css'%}"
+  />
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Page CSS-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}"
+  />
+  <!-- Input Number-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css'%}"
+  />
+  <!-- END: Input Numbe-->
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/plugins/extensions/noui-slider.min.css'%}"
+  />
+
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/vendors-rtl.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap-extended.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/components.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/custom-rtl.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/assets/css/style-rtl.css'%}"
+  />
+</head>
+
+{% endblock appheader %} {% block appbody %}
+
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper">
+    <div class="content-header row">
+      <div
+        class="content-header-center col-md-12 col-12"
+        style="margin-bottom: 0rem"
+      >
+        <div
+          class="text-center d-xl-none d-lg-none d-md-block d-sm-block d-xs-block"
+          style="margin-bottom: 0rem; opacity: 0.5"
+        >
+          <img
+            src="{% static 'images/2-t-croped_50.png'%}"
+            class="img-fluid"
+            alt="Brand logo"
+            style="object-fit: contain; width: auto; height: 100px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="content-body">
+      <!-- Search Bar -->
+      <section id="search-bar">
+        <div class="search-bar">
+          <form method="GET" name="form10">
+            {% csrf_token %}
+
+            <fieldset class="form-group position-relative">
+              <div class="input-group">
+                <input type="text" class="form-control border-success" value="{{search_text|default_if_none:"" }}" maxlength="75" name="searshFiled1" placeholder=" أدخل رقم التتبع الخاص بك "  aria-label="Amount">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="submit">
+                    تتبع الشحنة
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <div class="content-body">
+      <!-- Basic Carousel And Optional Carousel start -->
+
+      <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-xs-12 mb-1">
+          <div class="card border-info h-100 card-mb-0">
+            <div class="card-body">
+              <h4>حلول الشركات والقطاعات</h4>
+              <hr class="my-1" />
+
+              <div class="scrollable ul-without-bullets">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <a class=" " href="#" data-toggle=""
+                      ><i class="feather icon-minus"></i
+                      ><span data-i18n="Apps">الخدمات اللوجستية والشحن</span></a
+                    >
+                  </li>
+                  <li class="list-group-item">
+                    <a class=" " href="#" data-toggle=""
+                      ><i class="feather icon-minus"></i
+                      ><span data-i18n="Apps">النقل السريع</span></a
+                    >
+                  </li>
+                  <li class="list-group-item">
+                    <a class=" " href="#" data-toggle=""
+                      ><i class="feather icon-minus"></i
+                      ><span data-i18n="Apps"
+                        >التجارة الإلكترونية والشركات</span
+                      ></a
+                    >
+                  </li>
+                  <li class="list-group-item">
+                    <a class=" " href="#" data-toggle=""
+                      ><i class="feather icon-minus"></i
+                      ><span data-i18n="Apps">النفط والغاز</span></a
+                    >
+                  </li>
+                  <li class="list-group-item">
+                    <a class=" " href="#" data-toggle=""
+                      ><i class="feather icon-minus"></i
+                      ><span data-i18n="Apps"
+                        >المواد الكيميائية والبضائع الخطرة</span
+                      ></a
+                    >
+                  </li>
+                  <li class="list-group-item">
+                    <a class=" " href="#" data-toggle=""
+                      ><i class="feather icon-minus"></i
+                      ><span data-i18n="Apps"
+                        >حلول الشحن لقطاع الرعاية الصحية</span
+                      ></a
+                    >
+                  </li>
+                  <li class="list-group-item">
+                    <a class=" " href="#" data-toggle=""
+                      ><i class="feather icon-minus"></i
+                      ><span data-i18n="Apps">الموضة وتجارة التجزئة</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-7 col-sm-12 col-xs-12 mb-1">
+          <div class="card border-info text-center h-100 card-mb-0">
+            <div class="card-header">
+              <h4 class="card-title"></h4>
+            </div>
+
+            <div class="card-content">
+              <div class="card-body" style="padding: 0.1rem">
+                <div
+                  id="carousel-example-caption2"
+                  class="carousel slide"
+                  data-ride="carousel"
+                >
+                  <ol class="carousel-indicators">
+                    <li
+                      data-target="#carousel-example-caption2"
+                      data-slide-to="0"
+                      class="active"
+                    ></li>
+                    <li
+                      data-target="#carousel-example-caption2"
+                      data-slide-to="1"
+                    ></li>
+                    <li
+                      data-target="#carousel-example-caption2"
+                      data-slide-to="2"
+                    ></li>
+                    <li
+                      data-target="#carousel-example-caption2"
+                      data-slide-to="3"
+                    ></li>
+                    <li
+                      data-target="#carousel-example-caption2"
+                      data-slide-to="4"
+                    ></li>
+                    <li
+                      data-target="#carousel-example-caption2"
+                      data-slide-to="5"
+                    ></li>
+                    <li
+                      data-target="#carousel-example-caption2"
+                      data-slide-to="6"
+                    ></li>
+                  </ol>
+                  <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                      <a href="#">
+                        <img
+                          title="{{positemter.description}}"
+                          src="{% static  '/images/slider/1.png'%}"
+                          class="img-fluid"
+                          alt="image"
+                          style="
+                            object-fit: contain;
+                            width: 750px;
+                            height: 300px;
+                          "
+                        />
+                      </a>
+                      <div class="carousel-caption">
+                        <h3>{{positemter.name}}</h3>
+                        <p>{{positemter.description}}</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <a href="#">
+                        <img
+                          title="{{positemter.description}}"
+                          src="{% static  '/images/slider/2.png'%}"
+                          class="img-fluid"
+                          alt="image"
+                          style="
+                            object-fit: contain;
+                            width: 750px;
+                            height: 300px;
+                          "
+                        />
+                      </a>
+                      <div class="carousel-caption">
+                        <h3>{{positemter.name}}</h3>
+                        <p>{{positemter.description}}</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <a href="#">
+                        <img
+                          title="{{positemter.description}}"
+                          src="{% static  '/images/slider/3.png'%}"
+                          class="img-fluid"
+                          alt="image"
+                          style="
+                            object-fit: contain;
+                            width: 750px;
+                            height: 300px;
+                          "
+                        />
+                      </a>
+                      <div class="carousel-caption">
+                        <h3>{{positemter.name}}</h3>
+                        <p>{{positemter.description}}</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <a href="#">
+                        <img
+                          title="{{positemter.description}}"
+                          src="{% static  '/images/slider/4.png'%}"
+                          class="img-fluid"
+                          alt="image"
+                          style="
+                            object-fit: contain;
+                            width: 750px;
+                            height: 300px;
+                          "
+                        />
+                      </a>
+                      <div class="carousel-caption">
+                        <h3>{{positemter.name}}</h3>
+                        <p>{{positemter.description}}</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <a href="#">
+                        <img
+                          title="{{positemter.description}}"
+                          src="{% static  '/images/slider/5.png'%}"
+                          class="img-fluid"
+                          alt="image"
+                          style="
+                            object-fit: contain;
+                            width: 750px;
+                            height: 300px;
+                          "
+                        />
+                      </a>
+                      <div class="carousel-caption">
+                        <h3>{{positemter.name}}</h3>
+                        <p>{{positemter.description}}</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <a href="#">
+                        <img
+                          title="{{positemter.description}}"
+                          src="{% static  '/images/slider/6.png'%}"
+                          class="img-fluid"
+                          alt="image"
+                          style="
+                            object-fit: contain;
+                            width: 750px;
+                            height: 300px;
+                          "
+                        />
+                      </a>
+                      <div class="carousel-caption">
+                        <h3>{{positemter.name}}</h3>
+                        <p>{{positemter.description}}</p>
+                      </div>
+                    </div>
+
+                    <a
+                      class=""
+                      href="#carousel-example-caption2"
+                      role="button"
+                      data-slide="prev"
+                    >
+                      <!--<span class="" aria-hidden="true">&rsaquo;</span>-->
+                      <div class="swiper-button-next"></div>
+                    </a>
+                    <a
+                      class=""
+                      href="#carousel-example-caption2"
+                      role="button"
+                      data-slide="next"
+                    >
+                      <!--<span class="" aria-hidden="true">&lsaquo;</span>-->
+                      <div class="swiper-button-prev"></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock appbody %} {% block appfooter %}
+
+    <script src="{% static '/app-assets/vendors/js/vendors.min.js' %}"></script>
+
+    <script src="{% static '/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+
+    <script src="{% static '/app-assets/vendors/js/extensions/swiper.min.js' %}"></script>
+
+    <script src="{% static '/app-assets/js/core/app-menu.js' %}"></script>
+    <script src="{% static '/app-assets/js/core/app.js' %}"></script>
+    <script src="{% static '/app-assets/js/scripts/components.js' %}"></script>
+
+    <script src="{% static '/assets/js/scripts.js' %}"></script>
+
+    <script src="{% static '/app-assets/js/scripts/forms/select/form-select2.js' %}"></script>
+
+    {% endblock appfooter %}
+  </div>
+</div>

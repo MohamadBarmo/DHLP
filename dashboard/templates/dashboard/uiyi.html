@@ -1,0 +1,1491 @@
+{% extends 'base.html' %}
+
+{% load static  %}
+{% load i18n %}
+
+{% block appheader %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title> {% trans 'FerFary - electronic service broker' %}</title>
+    <link rel="apple-touch-icon" href="{% static  '/app-assets/images/ico/logoico.ico'%}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static  '/app-assets/images/ico/logoico.ico'%}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/vendors/css/extensions/nouislider.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/vendors/css/ui/prism.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/vendors/css/forms/select/select2.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/vendors/css/extensions/swiper.min.css'%}">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css"
+        href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}">
+    <!-- Input Number-->
+    <link rel="stylesheet" type="text/css"
+        href="{% static  '/app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css'%}">
+    <!-- END: Input Numbe-->
+
+    <link rel="stylesheet" type="text/css"
+        href="{% static  '/app-assets/css-rtl/plugins/extensions/noui-slider.min.css'%}">
+
+    <!-- END: Page CSS-->
+
+
+
+    <!-- BEGIN: Theme CSS-->
+    {% if LANGUAGE_CODE == 'ar' %}
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/vendors/css/vendors-rtl.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/bootstrap.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/bootstrap-extended.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/colors.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/components.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/themes/dark-layout.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/themes/semi-dark-layout.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/pages/app-user.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/core/colors/palette-gradient.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/pages/search.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/pages/app-ecommerce-shop.css'%}">
+    <!--  marketer -->
+    <link rel="stylesheet" type="text/css"
+        href="{% static  '/app-assets/css-rtl/plugins/forms/validation/form-validation.css'%}">
+    <link rel="stylesheet" type="text/css"
+        href="{% static  '/app-assets/vendors/css/pickers/pickadate/pickadate.css'%}">
+    <link rel="stylesheet" type="text/css"
+        href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}">
+    <!--  marketer -->
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/custom-rtl.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/assets/css/style-rtl.css'%}">
+
+    {% else %}
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/vendors/css/vendors.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css/bootstrap.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css/bootstrap-extended.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css/colors.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css/components.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css/themes/dark-layout.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css/themes/semi-dark-layout.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css/pages/app-user.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css/core/colors/palette-gradient.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css/pages/search.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css/pages/app-ecommerce-shop.css'%}">
+    <!--  marketer -->
+    <link rel="stylesheet" type="text/css"
+        href="{% static  '/app-assets/css/plugins/forms/validation/form-validation.css'%}">
+    <link rel="stylesheet" type="text/css"
+        href="{% static  '/app-assets/vendors/css/pickers/pickadate/pickadate.css'%}">
+    <link rel="stylesheet" type="text/css"
+        href="{% static  '/app-assets/css/core/menu/menu-types/horizontal-menu.css'%}">
+    <!--  marketer -->
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css/custom.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/assets/css/style.css'%}">
+
+    {% endif %}
+
+
+</head>
+
+
+{% endblock appheader %}
+
+{% block appbody %}
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        {% for message in messages %}
+
+        <div class="alert alert-success">
+            <a class="close" href="#" data-dismiss="alert" style="color:red">X</a>
+            {{ message }}
+        </div>
+        {% endfor %}
+        <div class="content-header row ">
+            <div class="content-header-center col-md-12 col-12 " style="margin-bottom: 0rem;">
+                <div class=" text-center bg-transparent d-xl-none d-lg-none d-md-block d-sm-block d-xs-block"
+                    style="margin-bottom: 0rem; opacity: 0.5;">
+                    <img src="{% static 'images/2-t-croped_50.png'%}" class="img-fluid" alt="Brand logo"
+                        style="object-fit:contain; width:auto;  height:100px;">
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content-body">
+            <!-- account setting page start -->
+            <section id="page-account-settings">
+                <div class="row">
+
+                    <!-- left menu section -->
+                    <div class="col-md-3 mb-2 mb-md-0">
+                        <ul class="nav nav-pills flex-column mt-md-0 mt-1">
+                            {% if group_company == True %}
+                            <li class="nav-item">
+                                <a  class="nav-link d-flex py-75 active" id="myproductsservicesforedit"
+                                    data-toggle="tab" role="tab" href="#account-vertical-notifications" aria-expanded="false">
+                                    <i class="feather icon-layers mr-50 font-medium-3"></i>
+                                    {% trans 'Products and Services' %}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex py-75" id="mypayments" data-toggle="tab" role="tab"
+                                    href="#account-vertical-payments" aria-expanded="false">
+                                    <i class="fa fa-usd mr-50 font-medium-3"></i>
+                                    {% trans 'Payments And Subscriptions' %}
+                                </a>
+                            </li>
+                            {% endif %}
+                            <li class="nav-item">
+                                <a class="nav-link d-flex py-75  {% if group_company != True %} active {% endif%}"
+                                    id="account-pill-general" data-toggle="pill" href="#account-vertical-general"
+                                    aria-expanded="false">
+                                    <i class="feather icon-info mr-50 font-medium-3"></i>
+                                    {% trans 'informations' %}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex py-75" id="account-pill-password" data-toggle="pill"
+                                    href="#account-vertical-password" aria-expanded="false">
+                                    <i class="feather icon-lock mr-50 font-medium-3"></i>
+                                    {% trans 'Change Password' %}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex py-75" id="account-pill-info" data-toggle="pill"
+                                    href="#account-vertical-info" aria-expanded="false">
+                                    <i class="feather icon-phone-call mr-50 font-medium-3"></i>
+                                    {% trans 'Addresses and phones' %}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex py-75" id="account-pill-social" data-toggle="pill"
+                                    href="#account-vertical-social" aria-expanded="false">
+                                    <i class="feather icon-camera mr-50 font-medium-3"></i>
+                                    {% trans 'Social media' %}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex py-75" id="account-pill-map" data-toggle="pill"
+                                    href="#account-vertical-map" aria-expanded="false"><i
+                                        class="feather icon-map-pin mr-50 font-medium-3"></i>
+                                    {% trans 'Location on the map' %}
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <!-- right content section -->
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <div class="tab-content">
+                                        {% if group_company == True %}
+                                        <div class="tab-pane active" id="account-vertical-notifications" role="tabpanel"
+                                            aria-labelledby="account-pill-notifications" aria-expanded="false">
+                                            <div class="row">
+
+                                                <div class="col-12 mb-1">
+                                                    <div class="card">
+
+                                                        <div class="card-content">
+                                                            <div class="mt-2 mb-1 text-center">
+                                                                <h2>{% trans 'My products and services' %}</h2>
+                                                            </div>
+                                                            <button tabindex="0"
+                                                                class="btn btn-outline-primary waves-effect waves-light"
+                                                                aria-controls="DataTables_Table_0">
+                                                                <a class="nav-link"
+                                                                    href="{% url 'main:product_details_add_edit'%}"
+                                                                    data-toggle="" data-target="">
+                                                                    <i class="feather icon-plus">
+                                                                        <span>
+                                                                            {% trans 'Adding a new product or service' %}
+                                                                        </span>
+                                                                    </i>
+                                                                </a>
+                                                            </button>
+                                                            <section id="ecommerce-products" class="list-view">
+                                                                {% if LANGUAGE_CODE == 'ar' %}
+                                                                {% for item in products %}
+                                                                <div
+                                                                    class="card ecommerce-card border-info border-info">
+                                                                    <div class="card-content">
+                                                                        <div class="item-img text-center">
+                                                                            <a
+                                                                                href="{% url 'main:product_details' item.id %}">
+                                                                                <img class="img-fluid"
+                                                                                    {% if item.image1 %}
+                                                                                    src="{{item.image1.url}}"
+                                                                                    {% endif %}
+                                                                                    alt="{{item.name|default_if_none:'' }}"></a>
+                                                                        </div>
+                                                                        <div class="card-body">
+                                                                            <div class="item-name">
+                                                                                <a
+                                                                                    href="{% url 'main:product_details' item.id %}">
+                                                                                    {{item.name|default_if_none:'' }}
+
+                                                                                </a>
+                                                                                <p class="item-company">
+                                                                                    <p class="item-company">
+                                                                                        <span class="company-name">
+                                                                                            {{item.date_created|default_if_none:'date_created' }}
+                                                                                        </span>
+                                                                                    </p>
+                                                                            </div>
+                                                                            <div>
+                                                                                <p class="item-description">
+                                                                                    {{item.active}}
+                                                                                    {{ item.description|default_if_none:'description' }}
+                                                                                </p>
+                                                                            </div>
+                                                                            {% if item.stat == "active" %}
+        
+                                                                            <div>
+                                                                                {% if item.active == True %}
+                                                                                <a href="{% url  'main:activation' 'False'  'page_account_settings' item.id %}"
+                                                                                    onclick="return confirm('{% trans 'Are you sure?' %}')"
+                                                                                    name="inactive_Company">
+                                                                                    <div class="chip chip-success">
+                                                                                        <div class="chip-body">
+                                                                                            <div class="chip-text">
+                                                                                                {% trans 'Active' %}
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                                {% else  %}
+                                                                                <a href="{% url  'main:activation' 'True'  'page_account_settings' item.id  %}"
+                                                                                    onclick="return confirm('{% trans 'Are you sure?' %}')"
+                                                                                    name="inactive_Company">
+                                                                                    <div class="chip chip-warning">
+                                                                                        <div class="chip-body">
+                                                                                            <div class="chip-text">
+                                                                                                {% trans 'InActive' %}
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                                {% endif %}
+                                                                            </div>
+                                                                            {% else %}
+                                                                            <div class="chip-text" style="color: red" >
+                                                                                {% trans 'InActive From Admin' %}
+                                                                            </div>
+                                                                            {% endif %}
+                                                                        </div>
+                                                                        <div class="item-options text-center">
+                                                                            <div class="item-wrapper">
+                                                                                <div class="item-rating">
+                                                                                    <div
+                                                                                        class="badge badge-primary badge-md">
+                                                                                        <span>{{item.star|default_if_none:0 }}</span>
+                                                                                        <i
+                                                                                            class="feather icon-star"></i>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="item-cost">
+                                                                                   
+                                                                                    <h6 class="item-price"  >
+                                                                                        {% load l10n %}
+                                                                                        {% localize off %}
+                                                                                        {{item.price|default_if_none:''}}
+                                                                                        {% endlocalize %}
+                                                                                        {{item.currency.name_ar|default_if_none:''}}
+                                                                                    </h6 >
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                            <a href="{% url  'main:Deleteproduct'   item.id  %}"
+                                                                                class=""
+                                                                                onclick="return confirm('{% trans 'Are you sure?' %}')">
+                                                                                <div class=""
+                                                                                    style="background-color: red;color: #FFFFFF; margin-top: 84px; margin-bottom: 10px; border-radius: 6px; padding: 0.8rem 1rem;">
+                                                                                    {% trans 'Delete' %}
+
+                                                                                </div>
+                                                                            </a>
+                                                                            <div class="cart">
+                                                                                <a href="{% url  'main:product_details_add_edit' item.id %}"
+                                                                                    class="view-in-cart">{% trans 'Update' %}</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {% endfor %}
+                                                                {% else %}
+                                                                {% for item in products %}
+                                                                <div
+                                                                    class="card ecommerce-card border-info border-info">
+                                                                    <div class="card-content">
+                                                                        <div class="item-img text-center">
+                                                                            <a
+                                                                                href="{% url 'main:product_details' item.id %}">
+                                                                                <img class="img-fluid"
+                                                                                    {% if item.image1 %}
+                                                                                    src="{{item.image1.url}}"
+                                                                                    {% endif %} alt="img-placeholder"
+                                                                                    style="object-fit:contain; width:auto;  height:200px;"></a>
+                                                                        </div>
+                                                                        <div class="card-body">
+                                                                            <div class="item-name">
+                                                                                <a
+                                                                                    href="{% url 'main:product_details' item.id %}">{{item.name}}
+                                                                                </a>
+                                                                                <p class="item-company">
+                                                                                    <span
+                                                                                        class="company-name">{{item.date_created}}</span>
+                                                                                </p>
+                                                                            </div>
+                                                                            <div>
+                                                                                <p class="item-description">
+                                                                                    {{item.description}}
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item-options text-center">
+                                                                            <div class="item-wrapper">
+                                                                                <div class="item-rating">
+                                                                                    <div
+                                                                                        class="badge badge-primary badge-md">
+                                                                                        <span>{{item.star}}</span> <i
+                                                                                            class="feather icon-star"></i>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="item-cost">
+                                                                                    <h6 class="item-price">
+
+                                                                                        {{item.price}}
+                                                                                        {{item.currency.name}}
+                                                                                    </h6>
+                                                                                </div>
+                                                                            </div>
+                                                                            <a href="{% url  'main:Deleteproduct'   item.id  %}"
+                                                                                class="view-in-cart"
+                                                                                onclick="return confirm('{% trans 'Are you sure?' %}')">
+                                                                                <div class="cart"
+                                                                                    style="background-color: red;color: #FFFFFF; margin-top: 84px; margin-bottom: 10px; border-radius: 6px; padding: 0.8rem 1rem;">
+                                                                                    {% trans 'Delete' %}
+                                                                                </div>
+                                                                            </a>
+                                                                            <div class="cart">
+                                                                                <a href="{% url  'main:product_details_add_edit' item.id %}"
+                                                                                    class="view-in-cart">{% trans 'Update' %}</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {% endfor %}
+                                                                {% endif %}
+                                                            </section>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade " id="account-vertical-payments" role="tabpanel"
+                                            aria-labelledby="account-pill-payments" aria-expanded="false">
+
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="content-body">
+                                                        <form method="POST" name="form20">
+                                                            {% csrf_token %}
+                                                            <section class="app-ecommerce-details">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+
+                                                                        <div class="row ">
+                                                                            <div
+                                                                                class="text-bold-700 font-medium-5 mb-1">
+                                                                                {% trans 'add subscription' %}
+
+                                                                            </div>
+                                                                            <hr>
+                                                                            <div class="col-12 col-md-12">
+                                                                                <div class="row ">
+                                                                                    <div
+                                                                                        class="col-xl-4 col-lg-4 col-md-4 col-sm-8 col-xs-8">
+                                                                                        <fieldset class="form-group">
+                                                                                            <p>{% trans 'Subscription type' %}
+                                                                                            </p>
+                                                                                            <ul
+                                                                                                class="list-unstyled mb-0">
+                                                                                                {% for item in subtype %}
+                                                                                                <li class="d-inline-block mr-2"
+                                                                                                    data-toggle="tooltip"
+                                                                                                    data-placement="bottom"
+                                                                                                    title="{{item.description_ar}}">
+                                                                                                    <fieldset>
+                                                                                                        <div
+                                                                                                            class="vs-radio-con vs-radio-success">
+                                                                                                            <input
+                                                                                                                type="radio"
+                                                                                                                name="subtypeRadio"
+                                                                                                                value="{{item.id}}"
+                                                                                                                {% if item.id == 1 %}
+                                                                                                                checked
+                                                                                                                {% endif %}>
+                                                                                                            <span
+                                                                                                                class="vs-radio">
+                                                                                                                <span
+                                                                                                                    class="vs-radio--border"></span>
+                                                                                                                <span
+                                                                                                                    class="vs-radio--circle"></span>
+                                                                                                            </span>
+                                                                                                            <span
+                                                                                                                class="">
+                                                                                                                {{item.name_ar}}
+                                                                                                            </span>
+                                                                                                        </div>
+                                                                                                    </fieldset>
+                                                                                                </li>
+                                                                                                {% endfor %}
+                                                                                            </ul>
+                                                                                        </fieldset>
+                                                                                        <hr>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        class="col-xl-4 col-lg-4 col-md-4 col-sm-8 col-xs-8">
+
+                                                                                        <p>{% trans 'payment method' %}
+                                                                                        </p>
+                                                                                        <select class="form-control"
+                                                                                            id="paymentSelect"
+                                                                                            name="payment_method">
+                                                                                            {% for item in payment_method %}
+                                                                                            <option value="{{item.id}}">
+                                                                                                {{item.name_ar}}
+                                                                                            </option>
+                                                                                            {% endfor %}
+                                                                                        </select>
+                                                                                        <hr>
+                                                                                    </div>
+                                                                                    <!-- <p class="text-muted">الناشر آبل</p>-->
+                                                                                </div>
+                                                                                <div class="row ">
+
+                                                                                    <div
+                                                                                        class="col-xl-4 col-lg-4 col-md-4 col-sm-8 col-xs-8   flex-column justify-content-end">
+                                                                                        <button type="submit"
+                                                                                            name="AddSubtype"
+                                                                                            class="btn btn-primary ">
+                                                                                            {% if canUpdateSubscription == 1  %}
+                                                                                            {% trans 'Update Subscribe' %}
+                                                                                            {% else %}
+                                                                                            {% trans 'Add Subscribe' %}
+                                                                                            {% endif %}
+                                                                                        </button>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </section>
+                                                        </form>
+
+                                                        <!-- Data list view starts -->
+                                                        <section id="my-data-thumb-view"
+                                                            class="my-data-thumb-view-header">
+                                                            <div class="text-bold-700 font-medium-5 mb-1">
+                                                                {% trans 'subscriptions Details' %}
+                                                            </div>
+                                                            <!-- dataTable starts -->
+                                                            <div class="table-responsive">
+                                                                <table class="table my-data-thumb-view">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th></th>
+                                                                            <th>{% trans 'ACTION' %}</th>
+                                                                            <th>{% trans 'name' %}</th>
+                                                                            <th>{% trans 'subtype' %}</th>
+                                                                            <th>{% trans 'begin Date' %}</th>
+                                                                            <th>{% trans 'end date' %}</th>
+                                                                            <th>{% trans 'remaining products' %}</th>
+                                                                            <th>{% trans 'Status' %}</th>
+                                                                            <th>{% trans 'situation' %}</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        {% for item in subscription%}
+                                                                        <tr>
+                                                                            <td></td>
+                                                                            <td class="product-action">
+
+
+
+                                                                                <a href="#" name="Deleteitem">
+                                                                                    <span class="">
+                                                                                        <i class="feather icon-x"
+                                                                                            data-toggle="tooltip"
+                                                                                            data-placement="bottom"
+                                                                                            title="{% trans 'Delete' %}">
+                                                                                        </i>
+                                                                                    </span>
+                                                                                </a>
+
+                                                                            </td>
+                                                                            <td class="product-name"><a target="_blank"
+                                                                                    rel="noopener noreferrer"
+                                                                                    href="#">{{item.name}}</a></td>
+                                                                            <td class="product-name"><a target="_blank"
+                                                                                    rel="noopener noreferrer"
+                                                                                    href="#">{{item.subtype.name}}</a>
+                                                                            </td>
+
+                                                                            <td class="NBR-Products">
+                                                                                {{item.date_start}}</td>
+                                                                            <td class="product-name"><a target="_blank"
+                                                                                    rel="noopener noreferrer"
+                                                                                    href="#">{{item.date_end}}</a></td>
+                                                                            <td class="product-name"><a target="_blank"
+                                                                                    rel="noopener noreferrer"
+                                                                                    href="#">{{item.payment_method.name}}</a>
+                                                                            </td>
+                                                                            <td class="product-name"><a target="_blank"
+                                                                                    rel="noopener noreferrer"
+                                                                                    href="#">{{item.status}}</a></td>
+                                                                            <td>
+                                                                                {% if item.active == True %}
+
+                                                                                <div class="chip chip-success">
+                                                                                    <div class="chip-body">
+                                                                                        <div class="chip-text">
+                                                                                            {% trans 'Active' %}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                </a>
+                                                                                {% else  %}
+
+                                                                                <div class="chip chip-warning">
+                                                                                    <div class="chip-body">
+                                                                                        <div class="chip-text">
+                                                                                            {% trans 'InActive' %}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                </a>
+                                                                                {% endif %}
+                                                                            </td>
+
+                                                                        </tr>
+
+                                                                        {% endfor %}
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </section>
+                                                        <!-- Data list view end -->
+                                                        <section id="ecommerce-pagination">
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <nav aria-label="Page navigation example">
+                                                                        {% if country.has_other_pages %}
+                                                                        <ul
+                                                                            class="pagination justify-content-center mt-2">
+                                                                            {% if country.has_previous %}
+
+                                                                            <li class="page-item prev-item"><a
+                                                                                    class="page-link"
+                                                                                    href="?page={{ country.previous_page_number }}"></a>
+                                                                            </li>
+                                                                            {% else %}
+                                                                            <li class="disabled"><span></span></li>
+                                                                            {% endif %}
+                                                                            {% for i in country.paginator.page_range %}
+                                                                            {% if country.number == i %}
+                                                                            <li class="page-item active"><a
+                                                                                    class="page-link"
+                                                                                    href="#">{{ i }}</a>{% trans 'Current' %}</li>
+
+                                                                            {% else %}
+                                                                            <li class="page-item"><a class="page-link"
+                                                                                    href="?page={{ i }}">{{ i }}</a>
+                                                                            </li>
+                                                                            {% endif %}
+                                                                            {% endfor %}
+                                                                            {% if country.has_next %}
+                                                                            <li class="page-item next-item"><a
+                                                                                    class="page-link"
+                                                                                    href="?page={{ country.next_page_number }}"></a>
+                                                                            </li>
+                                                                            {% else %}
+                                                                            <li class="disabled"><span></span></li>
+                                                                            {% endif %}
+                                                                        </ul>
+                                                                        {% endif %}
+                                                                    </nav>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        {% endif %}
+                                        <div role="tabpanel" {% if group_company == True  %} class="tab-pane fade"
+                                            {% else %} class="tab-pane active" {% endif %} id="account-vertical-general"
+                                            aria-labelledby="account-pill-general" aria-expanded="true">
+                                            <label for="account-username">{% trans 'Logo' %}</label>
+                                            <hr>
+                                            <form id="form0"  method="POST" enctype="multipart/form-data"
+                                                name="form1">
+
+                                                {% csrf_token %}
+
+                                                <div class="media">
+                                                    <a href="javascript: void(0);">
+                                                        <img {% if company.logo %} src="{{company.logo.url}}" {% else %}
+                                                            src="{% static  '/NoImage/No-profile-image.png'%}"
+                                                            {% endif %} class="rounded mr-75" alt="profile image"
+                                                            style="object-fit:contain; width:auto;  height:175px;  max-width:175px;"
+                                                            id="imgLogo">
+
+                                                    </a>
+                                                    <div class="media-body mt-75">
+                                                        <div
+                                                            class="col-12 px-0 d-flex flex-sm-row flex-column justify-content-start">
+                                                            <label id="fileuploadlb"
+                                                                class="btn btn-sm btn-primary ml-50 mb-50 mb-sm-0 cursor-pointer"
+                                                                for="account-upload" onclick="thisFileUpload()">
+                                                                {% trans 'Upload Image' %}</label>
+                                                            <input type="file" id="file" name="myfile" accept="image/*"
+                                                                style="display:none;" onchange="myFunction()">
+
+                                                                <label id="undobtn" class="btn btn-sm btn-outline-warning ml-50"
+                                                                for="account-upload" onclick="undobtn()">
+                                                                {% trans 'Undo' %}</label>
+                                                        </div>
+                                                         <p id="demo"></p>
+                                                       
+                                                        <p id="pfileuploadedto" class="d-none">
+                                                            {% trans 'File uploaded at:' %} <a id="aorgimg"
+                                                             href="#">{% if company.logo %} {{ company.logo.url }} {%else%} {% static  '/NoImage/No-profile-image.png'%}{% endif %}</a>
+                                                        </p>
+                                                       
+                                                        <p class="text-muted ml-75 mt-50"><small>{% trans 'Allowed' %}
+                                                                JPG, GIF or
+                                                                PNG.
+                                                                {% trans 'Max Size' %}
+                                                                800kB</small></p>
+                                                    </div>
+                                                </div>
+
+                                                <script>
+                                                    function thisFileUpload() {
+                                                       // console.log("click.");
+                                                        document.getElementById("file").click();
+                                                        // document.getElementById("demo").innerHTML = "";
+                                                    };
+                                                </script>
+                                                <script>
+                                                    var errormeassge = '{% trans "Exceeding the allowed image size" %}';
+                                                    var sizeinkilo = '{% trans "kilo byte" %}';
+                                                    var submitallowd = true;
+                                                     
+
+
+                                                    function myFunction(e) {
+                                                        
+                                                        if (document.getElementById('file').files.length == 0) {
+                                                          //  console.log("Suspect Cancel was hit, no files selected.");
+                                                                document.getElementById("imgLogo").src=document.getElementById('aorgimg').innerHTML;
+                                                               // console.log(document.getElementById('aorgimg'));
+                                                            // cancelButton.onclick();
+
+
+                                                        } else {
+                                                           // console.log("else.");
+                                                           // console.log(document.getElementById('file').files.length);
+                                                           // console.log(document.getElementById('aorgimg'));
+                                                            if (typeof FileReader !== "undefined") {
+                                                               // console.log("FileReader.");
+
+                                                                var file = document.getElementById('file').files[0];
+                                                                // check file size
+                                                                if (file.size < 800 * 1024) {
+                                                                    //document.getElementById("demo").innerHTML = "";
+                                                                    readURL(document.getElementById("file"));
+                                                                    document.getElementById("imgLogo").active;
+
+
+                                                                } else {
+                                                                    Errormessage = errormeassge + " " + (file.size /
+                                                                            1024)
+                                                                        .toFixed(0) + " " + sizeinkilo;
+                                                                    // var p = document.createElement("p");
+                                                                    // p.textContent = "File " + file.name + " is " + file
+                                                                    //    .size + " bytes in size";
+                                                                    // p.style = "color :red";
+                                                                    // document.getElementById('demo').appendChild(p);
+                                                                    // document.getElementById('pfileuploadedto').remove();
+                                                                    alert(Errormessage);
+                                                                    // document.getElementById("undobutton").click();
+
+                                                                }
+                                                            }
+                                                        }
+
+                                                    };
+
+                                                    function undobtn(e) {
+                                    
+                                                        document.getElementById("imgLogo").src = document.getElementById('aorgimg')
+                                                            .innerHTML;
+                                                            document.getElementById("file").value = '';
+                            
+                                                }
+                                                </script>
+                                                <script>
+                                                    function readURL(input) {
+
+                                                        if (input.files && input.files[0]) {
+                                                            var reader = new FileReader();
+
+                                                            reader.onload = function (e) {
+                                                                //alert(e.target.result);
+                                                                $('#imgLogo').attr('src', e.target.result);
+                                                            }
+
+                                                            reader.readAsDataURL(input.files[0]);
+                                                        }
+                                                    }
+                                                </script>
+
+                                                <!--<script>
+                                                    var inputElement = document.getElementById("testFile");
+                                                    var cancelButton = document.getElementById("pseudoCancel");
+                                                    var numFiles = 0;
+
+                                                    inputElement.onclick = function (event) {
+                                                        var target = event.target || event.srcElement;
+                                                        console.log(target, "clicked.");
+                                                        console.log(event);
+                                                        if (target.value.length == 0) {
+                                                            console.log(
+                                                                "Suspect Cancel was hit, no files selected.");
+                                                            cancelButton.onclick();
+                                                        } else {
+                                                            console.log("File selected: ", target.value);
+                                                            numFiles = target.files.length;
+                                                        }
+                                                    }
+
+                                                    inputElement.onchange = function (event) {
+                                                        var target = event.target || event.srcElement;
+                                                        console.log(target, "changed.");
+                                                        console.log(event);
+                                                        if (target.value.length == 0) {
+                                                            console.log(
+                                                                "Suspect Cancel was hit, no files selected.");
+                                                            if (numFiles == target.files.length) {
+                                                                cancelButton.onclick();
+                                                            }
+                                                        } else {
+                                                            console.log("File selected: ", target.value);
+                                                            numFiles = target.files.length;
+                                                        }
+                                                    }
+
+                                                    inputElement.onblur = function (event) {
+                                                        var target = event.target || event.srcElement;
+                                                        console.log(target, "changed.");
+                                                        console.log(event);
+                                                        if (target.value.length == 0) {
+                                                            console.log(
+                                                                "Suspect Cancel was hit, no files selected.");
+                                                            if (numFiles == target.files.length) {
+                                                                cancelButton.onclick();
+                                                            }
+                                                        } else {
+                                                            console.log("File selected: ", target.value);
+                                                            numFiles = target.files.length;
+                                                        }
+                                                    }
+
+
+                                                    cancelButton.onclick = function (event) {
+                                                        console.log("Pseudo Cancel button clicked.");
+                                                    }
+                                                </script>-->
+
+
+
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-username">{% trans 'User Name' %}</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="account-username" disabled
+                                                                    placeholder="{% trans 'User Name' %}"
+                                                                    value="{{company.user}}" required
+                                                                    data-validation-required-message="{% trans 'This field is required' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label for="account-e-mail">{% trans 'Email' %}</label>
+                                                                <input type="email" class="form-control"
+                                                                    id="account-e-mail" disabled
+                                                                    placeholder="{% trans 'Email' %}"
+                                                                    name="emailPearson"
+                                                                    value="{{ company.user.email|default_if_none:'' }}"
+                                                                    required
+                                                                    data-validation-required-message="{% trans 'This field is required' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="alert alert-warning alert-dismissible mb-2"
+                                                            role="alert">
+                                                            <button type="button" class="close" data-dismiss="alert"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                            <p class="mb-0">
+                                                                {% trans 'Your email has not been confirmed. Please check your inbox.' %}
+                                                            </p>
+                                                            <a
+                                                                href="javascript: void(0);">{% trans 'Resend confirmation' %}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-name">{% trans 'Full Name' %}</label>
+                                                                <input type="text" class="form-control" name="full_name"
+                                                                    value="{{ company.full_name|default_if_none:'' }}"
+                                                                    placeholder="{% trans 'Full Name' %}"
+                                                                    data-validation-required-message="{% trans 'This field is required' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label
+                                                                for="account-company">{% trans 'The Company' %}</label>
+                                                            <input type="text" class="form-control" id="account-company"
+                                                                name="companyPearson"
+                                                                value="{{ company.company|default_if_none:"" }}"
+                                                                placeholder="{% trans 'Company Name' %}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label
+                                                                for="accountTextarea">{% trans 'description' %}</label>
+                                                            <textarea name="updatedescription" class="form-control"
+                                                                id="accountTextareadescription" rows="3"
+                                                                placeholder="{% trans 'Detailed description of the company' %}"
+                                                                value="{{ company.description|default_if_none:''  }}">{{ company.description|default_if_none:""  }}</textarea>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                        <button type="submit" name="updatePersonalInfo"
+                                                            class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">{% trans 'Save' %}</button>
+
+
+
+                                                        <button type="reset"
+                                                            class="btn btn-outline-warning">{% trans 'Cancel' %}</button>
+                                                    </div>
+                                                    {% for Field in AddFields_arry %}
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label for="account-name">{{Field.FieldName}}</label>
+                                                                <input type="{{Field.valueType}}" class="form-control"
+                                                                    name="{{Field.FieldName}}"
+                                                                    value="{{ Field.FieldValue|default_if_none:"" }}"
+                                                                    placeholder="{% trans 'Value' %}"
+                                                                    data-validation-required-message="{% trans 'This field is required' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade " id="account-vertical-password" role="tabpanel"
+                                            aria-labelledby="account-pill-password" aria-expanded="false">
+                                            <form  method="POST" enctype="multipart/form-data" name="form3">
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-old-password">{% trans 'Old Password' %}
+                                                                </label>
+                                                                <input type="password" class="form-control"
+                                                                    name="passwordOld" id="account-old-password"
+                                                                    required placeholder="{% trans 'Old Password' %}"
+                                                                    data-validation-required-message="{% trans 'This field is required' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-new-password">{% trans 'New Password' %}
+                                                                </label>
+                                                                <input type="password" id="account-new-password"
+                                                                    class="form-control" name="passwordNew1"
+                                                                    placeholder="{% trans 'New Password' %}" required
+                                                                    data-validation-required-message="{% trans 'This field is required' %}"
+                                                                    minlength="6">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-retype-new-password">{% trans 'Retype the new password' %}
+                                                                </label>
+                                                                <input type="password" class="form-control" required
+                                                                    id="account-retype-new-password" name="passwordNew2"
+                                                                    data-validation-match-match="password"
+                                                                    placeholder="{% trans 'New Password' %}"
+                                                                    data-validation-required-message="{% trans 'This field is required' %}"
+                                                                    minlength="6">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                        <button type="submit" name="passwordFprm"
+                                                            class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">{% trans 'Save' %}
+                                                        </button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-warning">{% trans 'Cancel' %}</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="account-vertical-info" role="tabpanel"
+                                            aria-labelledby="account-pill-info" aria-expanded="false">
+                                            <form  method="POST" enctype="multipart/form-data" name="form2">
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label
+                                                                for="accountTextarea">{% trans 'Detailed address' %}</label>
+                                                            <textarea name="updateAddress" class="form-control"
+                                                                id="accountTextarea" rows="3"
+                                                                placeholder="{% trans 'Detailed address of the company headquarters' %}"
+                                                                value="{{ company.address|default_if_none:''  }}">{{ company.address|default_if_none:""  }}</textarea>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="accountSelect">{% trans 'country' %}</label>
+                                                            <select class=" form-control" id="accountSelectcountry"
+                                                                name="accountSelectcountry">
+
+
+                                                                {% if LANGUAGE_CODE == 'ar' %}
+                                                                {% for org in country %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if dic_serch.country1 == org.id %}
+                                                                    selected="selected" {% endif %}>
+                                                                    {{org.name_ar}}
+                                                                </option>
+                                                                {% endfor %}
+                                                                {% else %}
+                                                                {% for org in country %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if org == company.country %}selected="selected"
+                                                                    {% endif %}>
+                                                                    {{org.name}}
+                                                                </option>
+                                                                {% endfor %}
+                                                                {% endif %}
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="accountSelect">{% trans 'city' %}</label>
+                                                            <select class=" form-control" id="accountSelectcity"
+                                                                name="accountSelectcity">
+
+
+                                                                {% if LANGUAGE_CODE == 'ar' %}
+                                                                {% for org in city %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if org == company.city %}selected="selected"
+                                                                    {% endif %}>
+                                                                    {{org.name_ar}}
+                                                                </option>
+                                                                {% endfor %}
+                                                                {% else %}
+                                                                {% for org in city %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if org == company.city %}selected="selected"
+                                                                    {% endif %}>
+                                                                    {{org.name}}
+                                                                </option>
+                                                                {% endfor %}
+
+                                                                {% endif %}
+                                                            </select>
+
+                                                            <script>
+                                                                console.log(1);
+                                                                document.getElementById('accountSelectcountry')
+                                                                    .addEventListener('change', function () {
+                                                                        console.log(2);
+                                                                        var optionSelected = $(this).find(
+                                                                            "option:selected");
+                                                                        console.log(optionSelected.val());
+                                                                        const valueSelected = optionSelected
+                                                                            .val(); // get the selected subject ID from the HTML dropdown list 
+                                                                        var country_name = optionSelected.text();
+                                                                        console.log(optionSelected.text());
+                                                                        $.ajax({ // initialize an AJAX request
+                                                                            type: "GET",
+                                                                            url: '/getdetails',
+                                                                            data: {
+                                                                                'cnt': country_name,
+                                                                                'couid': valueSelected,
+                                                                                'type': 'city',
+                                                                                'csrfmiddlewaretoken': $(
+                                                                                        'input[name=csrfmiddlewaretoken]'
+                                                                                    )
+                                                                                    .val(),
+                                                                            },
+                                                                            success: function (
+                                                                                result
+                                                                            ) { // `data` is from `get_topics_ajax` view function
+                                                                                console.log(result);
+                                                                                $("#accountSelectcity option")
+                                                                                    .remove();
+                                                                                if (LANGUAGE_CODE ===
+                                                                                    "ar") {
+                                                                                    for (var i = result
+                                                                                            .length -
+                                                                                            1; i >=
+                                                                                        0; i--) {
+                                                                                        $("#accountSelectcity")
+                                                                                            .append(
+                                                                                                '<option value="' +
+                                                                                                result[
+                                                                                                    i]
+                                                                                                .id +
+                                                                                                '"{% if 5 == 5 %} selected="selected" {% endif %}> ' +
+                                                                                                result[
+                                                                                                    i]
+                                                                                                .name_ar +
+                                                                                                '</option>'
+                                                                                            );
+                                                                                    };
+                                                                                } else {
+
+                                                                                    for (var i = result
+                                                                                            .length -
+                                                                                            1; i >=
+                                                                                        0; i--) {
+                                                                                        $("#accountSelectcity")
+                                                                                            .append(
+                                                                                                '<option value="' +
+                                                                                                result[
+                                                                                                    i]
+                                                                                                .id +
+                                                                                                '"{% if 5 == 5 %} selected="selected" {% endif %}> ' +
+                                                                                                result[
+                                                                                                    i]
+                                                                                                .name +
+                                                                                                '</option>'
+                                                                                            );
+                                                                                    };
+                                                                                }
+                                                                            }
+                                                                        });
+                                                                    });
+                                                            </script>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="languageselect2">{% trans 'language' %}</label>
+                                                            <select class="form-control" id="languageselect2"
+                                                                name="updatelang">
+                                                                {% if LANGUAGE_CODE == 'ar' %}
+                                                                {% for org in lang %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if org == company.lang %}selected="selected"
+                                                                    {% endif %}>
+                                                                    {{org.name_ar}}
+                                                                </option>
+                                                                {% endfor %}
+                                                                {% else %}
+                                                                {% for org in lang %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if org == company.lang %}selected="selected"
+                                                                    {% endif %}>
+                                                                    {{org.name}}
+                                                                </option>
+                                                                {% endfor %}
+                                                                {% endif %}
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label for="account-phone1">{% trans 'phone' %} </label>
+                                                                <input type="text" class="form-control"
+                                                                    id="account-phone1" required
+                                                                    placeholder="{% trans 'phone Number' %}"
+                                                                    name="phoneN1"
+                                                                    value="{{ company.phoneN1|default_if_none:""  }}"
+                                                                    data-validation-required-message="{% trans 'This field is required' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label for="account-phone2">{% trans 'phone' %}
+                                                                    2</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="account-phone2" required name="phoneN2"
+                                                                    value="{{ company.phoneN2|default_if_none:""  }}"
+                                                                    placeholder="{% trans 'phone Number' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label for="account-phone3">{% trans 'Mobile number' %}
+                                                                </label>
+                                                                <input type="text" class="form-control"
+                                                                    id="account-phone3" required name="mobileN1"
+                                                                    value="{{ company.mobileN1|default_if_none:''  }}"
+                                                                    placeholder="{% trans 'Mobile number' %}"
+                                                                    data-validation-required-message="{% trans 'This field is required' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-phone4">{% trans 'Fax Number' %}</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="account-phone4" name="faxN"
+                                                                    value="{{company.faxN|default:''}}" required
+                                                                    placeholder="{% trans 'Fax Number' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-website">{% trans 'Website address' %}
+                                                                </label>
+                                                                <input type="text" class="form-control"
+                                                                    id="account-website"
+                                                                    placeholder="{% trans 'Website address' %}"
+                                                                    name="main_link"
+                                                                    value="{{ company.main_link|default_if_none:''  }}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                        <button type="submit" name="updateAddressInfo"
+                                                            class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">{% trans 'Save' %}
+                                                        </button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-warning">{% trans 'Cancel' %}</button>
+
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade " id="account-vertical-social" role="tabpanel"
+                                            aria-labelledby="account-pill-social" aria-expanded="false">
+                                            <form>
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="account-twitter">Twitter</label>
+                                                            <input type="text" id="account-twitter" class="form-control"
+                                                                placeholder="{% trans 'Add link' %}"
+                                                                value="https://www.twitter.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="account-facebook">Facebook</label>
+                                                            <input type="text" id="account-facebook"
+                                                                class="form-control"
+                                                                placeholder="{% trans 'Add link' %}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="account-google">Google+</label>
+                                                            <input type="text" id="account-google" class="form-control"
+                                                                placeholder="{% trans 'Add link' %}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="account-linkedin">LinkedIn</label>
+                                                            <input type="text" id="account-linkedin"
+                                                                class="form-control"
+                                                                placeholder="{% trans 'Add link' %}"
+                                                                value="https://www.linkedin.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="account-instagram">Instagram</label>
+                                                            <input type="text" id="account-instagram"
+                                                                class="form-control"
+                                                                placeholder="{% trans 'Add link' %}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="account-quora">Quora</label>
+                                                            <input type="text" id="account-quora" class="form-control"
+                                                                placeholder="{% trans 'Add link' %}">
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                        <button type="submit"
+                                                            class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">{% trans 'Save' %}
+                                                        </button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-warning">{% trans 'Cancel' %}</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="tab-pane fade" id="account-vertical-map" role="tabpanel"
+                                            aria-labelledby="account-pill-map" aria-expanded="false">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <!--<div class="mapouter">
+                                                        <div class="gmap_canvas"><iframe class="gmap_iframe"
+                                                                width="100%" frameborder="0" scrolling="no"
+                                                                marginheight="0" marginwidth="0"
+                                                                src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=University of Oxford&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+                                                                href="https://www.fridaynightfunkin.net/friday-night-funkin-mods-fnf-play-online/">FNF
+                                                                Online</a></div>
+                                                        <style>
+                                                            .mapouter {
+                                                                position: relative;
+                                                                text-align: right;
+                                                                width: 100%;
+                                                                height: 400px;
+                                                            }
+
+                                                            .gmap_canvas {
+                                                                overflow: hidden;
+                                                                background: none !important;
+                                                                width: 100%;
+                                                                height: 400px;
+                                                            }
+
+                                                            .gmap_iframe {
+                                                                height: 400px !important;
+                                                            }
+                                                        </style>
+                                                    </div>-->
+
+
+
+
+                                                    <!-- <div id="map"></div>
+                                                    
+                                                    <script>
+                                                        /* Always set the map height explicitly to define the size of the div
+                                                         * element that contains the map.   #map {
+                                                            height: 100 % ;
+                                                        }*/
+
+                                                        function initMap() {
+                                                            var myLatlng = {lat: -25.363,lng: 131.044};
+                                                            var map = new google.maps.Map(document.getElementById("map"), {zoom: 4,center: myLatlng });
+                                                            var marker = new google.maps.Marker({
+                                                                position: myLatlng,
+                                                                map: map,
+                                                                title: "Click to zoom",
+                                                            });
+                                                            map.addListener("center_changed", () => {
+                                                                // 3 seconds after the center of the map has changed, pan back to the
+                                                                // marker.
+                                                                window.setTimeout(() => {
+                                                                    map.panTo(marker.getPosition())
+                                                                }, 3000)
+                                                            });
+                                                            marker.addListener("click", () => {
+                                                                map.setZoom(8);
+                                                                map.setCenter(marker.getPosition())
+                                                            });
+                                                        }
+                                                    </script>
+
+                                                    <script async defer
+                                                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn1EEGoJLRrjnVMp44Gon_5mwt_GNQ3ZI&callback=initMap">
+                                                    </script>-->
+
+                                                    <div id="map"></div>
+
+                                                    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                                                    <script
+                                                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn1EEGoJLRrjnVMp44Gon_5mwt_GNQ3ZI&callback=initMap&libraries=&v=weekly"
+                                                        async></script>
+
+                                                </div>
+                                                <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                    <button type="submit"
+                                                        class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">{% trans 'Save' %}
+                                                    </button><button type="reset"
+                                                        class="btn btn-outline-warning">{% trans 'Cancel' %}</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- add new sidebar ends -->
+
+        <!-- account setting page end -->
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- END: Content-->
+
+
+
+<!-- END: Content-->
+
+
+
+{% endblock appbody %}
+
+{% block appfooter %}
+
+<!-- BEGIN: Vendor JS-->
+<script src="{% static '/app-assets/vendors/js/vendors.min.js' %}"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="{% static '/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+
+<script src="{% static '/app-assets/vendors/js/extensions/swiper.min.js' %}"></script>
+<!-- END: Page Vendor JS-->
+<!-- BEGIN: Page JS-->
+<script src="{% static '/app-assets/js/scripts/pages/app-ecommerce-details.js' %}"></script>
+<script src="{% static '/app-assets/js/scripts/forms/number-input.js' %}"></script>
+
+
+
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+
+<script src="{% static '/app-assets/vendors/js/ui/prism.min.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/extensions/wNumb.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/extensions/nouislider.min.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+
+<script src="{% static '/app-assets/js/core/app-menu.js' %}"></script>
+<script src="{% static '/app-assets/js/core/app.js' %}"></script>
+<script src="{% static '/app-assets/js/scripts/components.js' %}"></script>
+
+
+
+
+<script src="{% static '/app-assets/js/scripts/pages/app-ecommerce-shop.js' %}"></script>
+
+<script src="{% static '/app-assets/js/scripts/pages/app-user.js' %}"></script>
+<script src="{% static '/app-assets/js/scripts/ui/data-list-view.js' %}"></script>
+
+<!-- BEGIN: number-input-->
+<script src="{% static '/app-assets/js/scripts/forms/number-input.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js' %}"></script>
+<!-- END: number-input-->
+
+<!-- BEGIN: select-input-->
+<script src="{% static '/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+<!-- END: select-input-->
+
+<!-- marketer -->
+
+<script src="{% static '/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/pickers/pickadate/picker.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/pickers/pickadate/picker.date.js' %}"></script>
+
+<script src="{% static '/assets/js/scripts.js' %}"></script>
+
+<script src="{% static '/app-assets/js/scripts/forms/select/form-select2.js' %}"></script>
+{% endblock appfooter %}

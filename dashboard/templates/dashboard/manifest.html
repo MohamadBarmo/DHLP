@@ -1,0 +1,338 @@
+{% extends 'basedashboard.html' %} {% load static %} {% block appheader %}
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+  />
+  <meta
+    name="description"
+    content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities."
+  />
+  <meta
+    name="keywords"
+    content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
+  />
+  <meta name="author" content="PIXINVENT" />
+  <title> نظام تنظيم ومتابعة نقل الطرود-التحكم</title>
+  <link
+    rel="apple-touch-icon"
+    href="{% static  '/images/2-t.png'%}"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="{% static  '/images/2-t.png'%}"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600"
+    rel="stylesheet"
+  />
+
+  <!-- BEGIN: Vendor CSS-->
+
+  
+ 
+ 
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Page CSS-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/colors.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/core/colors/palette-gradient.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/pages/invoice.css'%}">
+ 
+
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/vendors-rtl.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap-extended.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/components.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/custom-rtl.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/assets/css/style-rtl.css'%}"
+  />
+  <style>
+    @font-face {
+        font-family: 'BarcodeFont';
+        src: url('{% static 'fonts/Libre_Barcode_39/LibreBarcode39-Regular.ttf' %}') format('truetype');
+    }
+
+    .barcode-text {
+        font-family: 'BarcodeFont', Arial, sans-serif; /* Use the barcode font */
+        font-size: 100px; /* Adjust font size as needed */
+       
+    }
+</style>
+ 
+</head>
+
+{% endblock appheader %} {% block appbody %}
+
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper">
+    <div class="content-header row">
+      <div
+        class="content-header-center col-md-12 col-12"
+        style="margin-bottom: 0rem"
+      >
+        <div
+          class="text-center d-xl-none d-lg-none d-md-block d-sm-block d-xs-block"
+          style="margin-bottom: 0rem; opacity: 0.5"
+        >
+          <img
+            src="{% static 'images/2-t-croped_50.png'%}"
+            class="img-fluid"
+            alt="Brand logo"
+            style="object-fit: contain; width: auto; height: 100px"
+          />
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="content-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">الفرع الحالي</h4>
+            </div>
+            <div class="card-content">
+                <div class="card-body pb-0">
+                    <div class="card-text">                       
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-mx-0 table-borderless mb-0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h1 class="primary">سوريا دمشق</h1>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      
+      <section class="invoice-print mb-1">
+        <div class="row">
+
+            <fieldset class="col-12 col-md-5 mb-1 mb-md-0">
+                
+            </fieldset>
+            <div class="col-12 col-md-7 d-flex flex-column flex-md-row justify-content-end">
+                <button class="btn btn-primary btn-print mb-1 mb-md-0"> <i class="feather icon-file-text"></i> طباعة</button>
+            </div>
+        </div>
+    </section>
+    <!-- invoice functionality end -->
+    <!-- invoice page -->
+    <section class="card invoice-page">
+      <div class="row">
+        <div class="col-sm-12 col-12">
+        <div class="barcode-text">12345678911234</div> 
+      </div>
+    </div>
+        <div id="invoice-template" class="card-body">
+            <!-- Invoice Company Details -->
+            <div id="invoice-company-details" class="row">
+                <div class="col-sm-3 col-12 text-left pt-1">
+                    <div class="media pt-1">
+                        <img src="{% static 'images/2-t-croped_50.png'%}" />
+                    </div>
+                </div>
+                <div class="col-sm-3 col-12 text-right">
+                    <h1>ايصال الشحن</h1>
+                    <div class="invoice-details mt-2">
+                        <h6>رقم البوليصة (التتبع)</h6>
+                        <p>2488352650</p>
+                        <h6 class="mt-2">تاريخ الشحن</h6>
+                        <p>11-4-2024</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-12 text-right">
+               
+                 
+              </div>
+               
+            </div>
+            <!--/ Invoice Company Details -->
+
+            <!-- Invoice Recipient Details -->
+            <div id="invoice-customer-details" class="row pt-2">
+                <div class="col-sm-6 col-12 text-left">
+                    <h5>الشحن من</h5>
+                    <div class="recipient-info my-2">
+                        <p>محمد برمو</p>
+                        <p>ساحة الازروني</p>
+                        <p>شارع : بناء رقم 55 الطابق الاول</p>
+                        <p> دمشق</p>
+                        <p> سوريا</p>
+                    </div>
+                    <div class="recipient-contact pb-2">
+                        <p>
+                            <i class="feather icon-mail"></i>
+                            sahnayaoffice@gmail.com
+                        </p>
+                        <p>
+                            <i class="feather icon-phone"></i>
+                            00963949368200
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-12 text-right">
+                    <h5>الشحن الى</h5>
+                    <div class="company-info my-2">
+                        <p>ABDULHADI BARMO</p>
+                        <p>ISTANBUL BEYLIKDUZU</p>
+                        <p>ADNAN KAHVECI MAH OSMANLI CAD N020 SAROS </p>
+                        <p>OZENKENT SITESI C BLOK IC KAPI NO 201</p>
+                        <p>34695 ISTANBUL BELINKDUZU ANTOLIA AREA</p>
+                        <p>Turkey </p>
+                    </div>
+                    <div class="company-contact">
+                        <p>
+                            <i class="feather icon-mail"></i>
+                        
+                        </p>
+                        <p>
+                            <i class="feather icon-phone"></i>
+                            +906386834230
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Invoice Recipient Details -->
+
+            <!-- Invoice Items Details -->
+            <div id="invoice-items-details" class="pt-1 invoice-items-table">
+                <div class="row">
+                    <div class="table-responsive col-12">
+                      <p><h2>تفاصيل الشحنة</h2></p>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>نوع الخدمة </th>
+                                    <th>نوع الشحنة</th>
+                                    <th>عدد القطع</th>
+                                    <th>الوزن</th>
+                                    <th>الوحدة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>EXPRESS WORLDWIDE</td>
+                                    <td>CARD Envelope</td>
+                                    <td>1</td>
+                                    <td>0.5</td>
+                                    <td>KG</td>
+                                </tr>
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="invoice-total-details" class="invoice-total-table">
+                <div class="row">
+                    <div class="col-7 offset-5">
+                        <div class="table-responsive">
+                            <table class="table table-borderless">
+                                <tbody>
+                                   
+                                    <tr>
+                                      <td>469022599</td>
+                                        <th>حساب الفوترة</th>
+                                        
+                                    </tr>
+                                    <tr>
+                                      <td>FEARFARY Account Number</td>
+                                        <th>طريقة الدفع</th>
+                                      
+                                    </tr>
+                                    <tr>                                      
+                                      <td>Passports PASSPORT2</td>
+                                      <th>وصف المحتوى</th>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invoice Footer -->
+            <div id="invoice-footer" class="text-right pt-3">
+                <p>تحويل المبالغ إلى مبلغ الأعمال أدناه. يرجى إدراج رقم بوليصة الشحن على الشيك الخاص بك.
+                    <p class="bank-details mb-0">
+                        <span class="mr-4">BANK: <strong>FTSBUS33</strong></span>
+                        <span>IBAN: <strong>G882-1111-2222-3333</strong></span>
+                    </p>
+            </div>
+           
+            <!--/ Invoice Footer -->
+
+        </div>
+    </section>
+     
+    </div>
+
+    {% endblock appbody %} 
+    {% block appfooter %}
+
+    <script src="{% static '/app-assets/vendors/js/vendors.min.js' %}"></script>
+
+    <script src="{% static '/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+
+
+    <script src="{% static '/app-assets/js/core/app-menu.js' %}"></script>
+    <script src="{% static '/app-assets/js/core/app.js' %}"></script>
+    <script src="{% static '/app-assets/js/scripts/components.js' %}"></script>
+
+    <script src="{% static '/assets/js/scripts.js' %}"></script>
+
+    <script src="{% static '/app-assets/js/scripts/pages/invoice.js' %}"></script>
+
+    {% endblock appfooter %}
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barcode Sticker</title>
+<style>
+    /* CSS for printing */
+    @media print {
+        /* Set the position of the container to top-left */
+        .barcode-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Container for the barcode -->
+    <div class="barcode-container">
+        <!-- Display the barcode image -->
+        <img src="{% url 'generate_barcode' %}" alt="Barcode Image">
+    </div>
+</body>
+</html>

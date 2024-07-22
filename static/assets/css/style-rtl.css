@@ -1,0 +1,422 @@
+    /*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+    
+    @import url("https://fonts.googleapis.com/css?family=Cairo:300,400,600,700,800,900");
+    * {
+        font-family: "Cairo", sans-serif;
+    }
+    
+    .scrollable {
+        overflow-y: auto;
+        max-height: 600px;
+        border: 1px solid #00cfe8 !important;
+    }
+
+    .scrollablepage{
+        
+         width: 62.5%; 
+         min-height: 100%;
+         overflow:auto;
+         background: #fffac8;
+         margin: 0 auto;
+         box-shadow: 0px 0px 10px 0px #000000; 
+        
+    }
+
+    
+    
+    .card-mb-0 {
+        margin-bottom: 0rem;
+    }
+    
+    .new-img-fluid {
+        max-width: 15%;
+        height: auto;
+    }
+    
+    .header-navbar .navbar-container ul.nav li.dropdown-country li.dropdown-city {
+        padding-left: 0;
+    }
+    
+    .header-navbar .navbar-container ul.nav li.dropdown-country .dropdown-city .selected-language {
+        font-size: 0.97rem;
+        letter-spacing: -0.25px;
+        font-weight: 500;
+    }
+    
+    .header-navbar .navbar-container ul.nav li.dropdown-country>a.nav-link {
+        padding: 1.65rem 0.5rem;
+    }
+    
+    .header-navbar .navbar-container ul.nav li.dropdown-city>a.nav-link {
+        padding: 1.65rem 0.5rem;
+    }
+    
+    #navbar-component .navbar .navbar-nav .dropdown-country.show .dropdown-city.show,
+    #navbar-component .navbar .navbar-nav .dropdown-notification.show,
+    #navbar-component .navbar .navbar-nav .dropdown-user.show {
+        position: relative;
+    }
+    
+    #navbar-component .navbar .navbar-nav .dropdown-country .dropdown-city .dropdown-menu.show,
+    #navbar-component .navbar .navbar-nav .dropdown-notification .dropdown-menu.show,
+    #navbar-component .navbar .navbar-nav .dropdown-user .dropdown-menu.show {
+        position: absolute;
+        left: 0;
+        right: auto !important;
+    }
+    
+    @media (min-width: 992px) {
+        #navbar-component .navbar .navbar-container {
+            background: inherit;
+        }
+        #navbar-component .nav .dropdown-country .dropdown-city {
+            float: left;
+        }
+    }
+    
+    .carousel-control-prev-icon {
+        background-image: none;
+    }
+    
+    .carousel-control-next-icon {
+        background-image: none;
+    }
+    
+    .carousel-control {
+        position: absolute;
+        top: 40%;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        font-size: 60px;
+        font-weight: 100;
+        line-height: 30px;
+        color: #fff;
+        text-align: center;
+        background: #222;
+        border: 3px solid #fff;
+        -webkit-border-radius: 23px;
+        -moz-border-radius: 23px;
+        border-radius: 23px;
+        opacity: .5;
+        filter: alpha(opacity=50)
+    }
+    
+    .carousel-control:hover {
+        color: #FFFFFF;
+        text-decoration: none;
+        opacity: .9;
+        outline: 0;
+        filter: alpha(opacity=90)
+    }
+    
+    .footer .block ul li {
+        margin-bottom: 10px;
+    }
+    
+    .footer .block ul li a {
+        display: block;
+        font-size: 14px;
+        color: #797979;
+    }
+    
+    .footer .block ul li a:hover {
+        color: #5672f9;
+        text-decoration: underline;
+    }
+    
+    .footer .block ul.terms-list {
+        margin-top: 10px;
+    }
+    
+    .footer .block ul.terms-list li a {
+        padding-right: 10px;
+    }
+    
+    .carousel-indicators {
+        margin-bottom: 0rem;
+    }
+    
+    .carousel-indicators li {
+        background-color: #999;
+        background-color: rgba(70, 70, 70, 0.25);
+    }
+    
+    .carousel-indicators .active {
+        background-color: #444;
+    }
+    
+    .common-Products {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+    
+    .ul-without-bullets {
+        list-style-type: none;
+        padding: 0px;
+    }
+    /*--------------------------------------------------------------------------------*/
+    
+    .cards-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .card-common {
+        margin: 0 0.5em;
+        box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+        border: none;
+        border-radius: 0;
+    }
+    
+    .card-common img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .carousel-inner {
+        padding: 1em;
+    }
+    
+    .prev-common,
+    .next-common {
+        background-color: #e1e1e1;
+        width: 5vh;
+        height: 5vh;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    @media (min-width: 768px) {
+        .card-common img {
+            height: 11em;
+        }
+    }
+    
+    #companyid {
+        display: none;
+    }
+    /*--------------------------------------------------------------------------------*/
+    
+    * {
+        box-sizing: border-box;
+    }
+    /* Position the image container (needed to position the left and right arrows) */
+    
+    .container {
+        position: relative;
+    }
+    /* Hide the images by default */
+    
+    .mySlides {
+        display: none;
+    }
+    /* Add a pointer when hovering over the thumbnail images */
+    
+    .cursor {
+        cursor: pointer;
+    }
+    /* Next & previous buttons */
+    
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+    /* Position the "next button" to the right */
+    
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    /* On hover, add a black background color with a little bit see-through */
+    
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    /* Number text (1/3 etc) */
+    
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+    /* Container for image text */
+    
+    .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+    }
+    
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    /* Six columns side by side */
+    
+    .column {
+        float: left;
+        width: 16.66%;
+    }
+    /* Add a transparency effect for thumnbail images */
+    
+    .demo {
+        opacity: 0.6;
+    }
+    
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+    /* For Rating Button ------------------------------------------------*/
+
+.rating {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg);
+    display: flex;
+
+}
+
+.rating input {
+    display :none;
+}
+
+.rating label {
+    display: block;
+    cursor: pointer;
+    width: 50px;
+   
+}
+
+.rating label:before {
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    font-size: 30px;
+    color : #101010;
+}
+
+ .rating label:after {
+    content: '\f005';
+    font-family: fontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 30px;
+    color : #1f9cff;
+    top : 0;
+    opacity : 0;
+    transition : .5s;
+    text-shadow : 0 2px 5px rgba(0,0,0,.5); 
+     }
+
+ .rating label:hover:after,
+ .rating input:checked ~ label::after,
+ .rating input:checked ~ label::after
+       {
+          opacity : 1;
+      }
+
+      /* For Add product page ------------------------------------------------*/
+
+      .mynewSlides img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .img {
+        vertical-align: center;
+        horizontal-align: center;
+
+    }
+
+     /* For Add product Details ------------------------------------------------*/
+
+     .mySlides img {
+        width: 300px;
+        height: 200px;
+    }
+
+    .img {
+        vertical-align: center;
+        horizontal-align: center;
+
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+        position: relative;
+
+
+
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+        cursor: pointer;
+    }
+
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* four columns side by side */
+    .column {
+        float: center;
+        width: 25%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+        opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
+    .redborder { 
+        border: 1px solid red;
+     }
+
+    
+    

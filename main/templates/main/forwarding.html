@@ -1,0 +1,393 @@
+{% extends 'base.html' %} {% load static %} {% block appheader %}
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+  />
+  <meta
+    name="description"
+    content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities."
+  />
+  <meta
+    name="keywords"
+    content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
+  />
+  <meta name="author" content="PIXINVENT" />
+  <title>نظام تنظيم ومتابعة نقل الطرود</title>
+  <link
+    rel="apple-touch-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600"
+    rel="stylesheet"
+  />
+
+  <!-- BEGIN: Vendor CSS-->
+
+  
+  
+  
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/vendors-rtl.min.css'%}"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/vendors/css/forms/select/select2.min.css'%}">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap-extended.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/colors.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/components.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/themes/dark-layout.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/themes/semi-dark-layout.css'%}"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/core/colors/palette-gradient.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/pages/users.css'%}">
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/custom-rtl.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static  '/assets/css/style-rtl.css'%}">
+ 
+  
+ 
+</head>
+
+{% endblock appheader %} {% block appbody %}
+
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper">
+    <div class="content-header row">
+      <div
+        class="content-header-center col-md-12 col-12"
+        style="margin-bottom: 0rem"   >
+        <div class="text-center d-xl-none d-lg-none d-md-block d-sm-block d-xs-block"
+          style="margin-bottom: 0rem; opacity: 0.5"  >
+          <img
+            src="{% static 'images/2-t-croped_50.png'%}"
+            class="img-fluid"
+            alt="Brand logo"
+            style="object-fit: contain; width: auto; height: 100px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="content-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">FerFeary Global Forwarding</h4>
+            </div>
+            <div class="card-content">
+                <div class="card-body pb-0">
+                    <div class="card-text">                       
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-mx-0 table-borderless mb-0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h1 class="primary">نساعدك على توصيل بضائعك إلى جميع أنحاء العالم منذ 1815</h1>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div id="user-profile">
+       
+        <section id="profile-info">
+            <div class="row">
+                <div class="col-lg-3 col-12">
+                   
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-start align-items-center mb-1">
+                               
+                                <div class="user-page-info">
+                                  <h6 class="mb-0">الشحن الجوي</h6>
+                                
+                                </div>
+                                
+                            </div>
+                            <p>نوفر لك المجموعة الأوسع والأكثر مرونة من حلول الشحن الجوي لنقل بضائعك بسرعة وموثوقية.</p>
+                            <img class="img-fluid card-img-top rounded-sm mb-2" src="{% static  '/images/forwarding/1.jpeg'%}"  alt="avtar img holder">
+                            <div class="d-flex justify-content-start align-items-center mb-1">
+                                <div class="d-flex align-items-center">
+                                   
+                                </div>
+                              
+                              
+                            </div>
+                            <div class="d-flex justify-content-start align-items-center mb-1">
+                               
+                                <div class="user-page-info">
+                                    <h6 class="mb-0">
+                                      خدمة SameDay الجوية</h6>
+                                    <span class="font-small-2">أسرع حلول الشحن الجوي للحالات الطارئة</span>
+                                </div>
+                               
+                            </div>
+                            <div class="d-flex justify-content-start align-items-center mb-2">
+                               
+                                <div class="user-page-info">
+                                    <h6 class="mb-0">خدمات Air Priority وAir Economy</h6>
+                                    <span class="font-small-2">نمنحك الموثوقية بالسرعة التي تحتاج إليها</span>
+                                </div>
+                                
+                            </div>
+                            <div class="d-flex justify-content-start align-items-center mb-2">
+                               
+                              <div class="user-page-info">
+                                  <h6 class="mb-0">Air Tailored Lift</h6>
+                                  <span class="font-small-2">خيارات مرنة للسعات والتوجيه من أجل متطلبات التوصيل الخاصة</span>
+                              </div>
+                              
+                          </div>
+                          <div class="d-flex justify-content-start align-items-center mb-2">
+                               
+                            <div class="user-page-info">
+                                <h6 class="mb-0">التحكم في درجة حرارة الجو</h6>
+                                <span class="font-small-2">إمداد الأشخاص بمنتجاتك المنقذة للحياة</span>
+                            </div>
+                            
+                        </div>
+                            
+                        </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-body">
+                          <div class="d-flex justify-content-start align-items-center mb-1">
+                             
+                              <div class="user-page-info">
+                                <h6 class="mb-0">الشحن البحري</h6>
+                              
+                              </div>
+                              
+                          </div>
+                          <p>نوفر لك حلول خدمة النقل الشاملة للشحن البحري الأكثر مرونة والأكثر فعالية من حيث التكلفة وذات التنسيق الكامل من دون الحاجة إلى التنازل عن الجودة أو الموثوقية.</p>
+                          <img class="img-fluid card-img-top rounded-sm mb-2" src="{% static  '/images/forwarding/2.jpeg'%}"  alt="avtar img holder">
+                          <div class="d-flex justify-content-start align-items-center mb-1">
+                              <div class="d-flex align-items-center">
+                                 
+                              </div>
+                            
+                            
+                          </div>
+                          <div class="d-flex justify-content-start align-items-center mb-1">
+                             
+                              <div class="user-page-info">
+                                  <h6 class="mb-0">حمولة بحرية لحاوية كاملة</h6>
+                                  <span class="font-small-2">نمنحك الموثوقية الكاملة مع المرونة التي تحتاج إليها</span>
+                              </div>
+                             
+                          </div>
+                          <div class="d-flex justify-content-start align-items-center mb-2">
+                             
+                              <div class="user-page-info">
+                                  <h6 class="mb-0">حمولة بحرية أقل من حاوية</h6>
+                                  <span class="font-small-2">نقل شحنات فردية أصغر أو جمعها في حاوية كاملة</span>
+                              </div>
+                              
+                          </div>
+                          <div class="d-flex justify-content-start align-items-center mb-2">
+                             
+                            <div class="user-page-info">
+                                <h6 class="mb-0">حمولة بحرية غير مجمعة في حاوية</h6>
+                                <span class="font-small-2">خدمات توزيع الحمولة مع البضائع زائدة الحجم والتي خارج نطاق القياس</span>
+                            </div>
+                            
+                        </div>
+                        <div class="d-flex justify-content-start align-items-center mb-2">
+                             
+                          <div class="user-page-info">
+                              <h6 class="mb-0">حمولة بحرية يتم التحكم في درجة حرارتها</h6>
+                              <span class="font-small-2">أعلى معايير العناية ببضائع علوم الحياة والبضائع القابلة للتلف</span>
+                          </div>
+                          
+                      </div>
+                          
+                      </div>
+                  </div>
+                   
+                  <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-start align-items-center mb-1">
+                           
+                            <div class="user-page-info">
+                              <h6 class="mb-0">الشحن البري</h6>
+                               
+                            </div>
+                            
+                        </div>
+                        <p>نقدم نقلاً بريًا عالي الجودة بدءًا من الخدمات القياسية مثل شحنات خدمة شحن بأقل من حمولة الشاحنة (LTL) أو حمولة شاحنة جزئية (PTL) أو حمولة شاحنة كاملة (FTL) إلى وسائل النقل التي يتم التحكم في درجة حرارتها وتأمينها بدرجة عالية.</p>
+                        <img class="img-fluid card-img-top rounded-sm mb-2" src="{% static  '/images/forwarding/3.jpeg'%}"  alt="avtar img holder">
+                        <div class="d-flex justify-content-start align-items-center mb-1">
+                            <div class="d-flex align-items-center">
+                               
+                            </div>
+                          
+                          
+                        </div>
+                        <div class="d-flex justify-content-start align-items-center mb-1">
+                           
+                            <div class="user-page-info">
+                                <h6 class="mb-0">نوفر خدماتنا في القارات الآتية وفيما بينها:</h6>
+                                <span class="font-small-2">
+                                 
+                                  
+                                  <p>
+                                    
+                                </p>
+
+                                  <p>
+                                    أوروبا
+                                </p>
+                                <hr>
+                                <p>
+                                  آسيا
+                                </p>
+                                <hr>
+                                <p>
+                                  إفريقيا
+                                </p>
+                                <hr>
+                                <p>
+                                  أمريكا الشمالية
+                                </p>
+                                </span>
+                            </div>
+                           
+                        </div>
+                       
+                          
+                     
+                        
+                    </div>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                      <div class="d-flex justify-content-start align-items-center mb-1">
+                         
+                          <div class="user-page-info">
+                            <h6 class="mb-0">الخدمات الجمركية</h6>
+                             
+                          </div>
+                          
+                      </div>
+                      <p>في بيئة تنظيمية دائمة التغير، حافظ على راحة بالك النابعة من معرفة أن بضاعتك يتم تخليصها جمركيًا بسرعة وبالتوافق التام مع قواعد السوق الخاصة بك. دع الأمر لأحد أكبر الوسطاء الجمركيين في العالم الذي يضع شبكته العالمية تحت تصرفك.</p>
+                      <img class="img-fluid card-img-top rounded-sm mb-2" src="{% static  '/images/forwarding/4.jpeg'%}"  alt="avtar img holder">
+                      <div class="d-flex justify-content-start align-items-center mb-1">
+                          <div class="d-flex align-items-center">
+                             
+                          </div>
+                        
+                        
+                      </div>                     
+                      <div class="d-flex justify-content-start align-items-center mb-2">
+                         
+                          <div class="user-page-info">
+                              <h6 class="mb-0">خدماتنا:</h6>
+                              <span class="font-small-2"> 
+                                
+                                <p>
+                                    
+                                </p>
+
+                                  <p>
+                                    التخليص الجمركي للاستيراد والتصدير
+                                </p>
+                                <hr>
+                                <p>
+                                  الحلول الجمركية المتكاملة
+                                </p>
+                              </span>
+                          </div>
+                          
+                      </div>
+                     
+                    
+                      
+                  </div>
+              </div>
+                    
+                </div>
+                <div class="col-lg-3 col-12">
+                  
+                </div>
+            </div>
+           
+        </section>
+    </div>
+    
+    </div>
+
+   
+    
+  
+  </div>
+
+  <!-- END: Content-->
+
+  {% endblock appbody %} {% block appfooter %}
+
+  <!-- BEGIN: Vendor JS-->
+  <script src="{% static '/app-assets/vendors/js/vendors.min.js' %}"></script>
+  <script src="{% static '/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+  
+  <script src="{% static '/app-assets/js/core/app-menu.js' %}"></script>
+  <script src="{% static '/app-assets/js/core/app.js' %}"></script>
+  <script src="{% static '/app-assets/js/scripts/components.js' %}"></script>
+
+  <script src="{% static '/app-assets/js/scripts/pages/user-profile.js' %}"></script>
+
+
+  
+  {% endblock appfooter %}
+</div>

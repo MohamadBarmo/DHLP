@@ -1,0 +1,756 @@
+{% extends 'basedashboard.html' %} {% load static %} {% block appheader %}
+{% load i18n %}
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+  />
+  <meta
+    name="description"
+    content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities."
+  />
+  <meta
+    name="keywords"
+    content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
+  />
+  <meta name="author" content="PIXINVENT" />
+  <title>نظام تنظيم ومتابعة نقل الطرود-التحكم</title>
+  <link
+    rel="apple-touch-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600"
+    rel="stylesheet"
+  />
+
+  <!-- BEGIN: Vendor CSS-->
+
+  
+ 
+ 
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Page CSS-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/colors.css'%}">
+
+ 
+ 
+
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/vendors-rtl.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap-extended.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/components.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/custom-rtl.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/assets/css/style-rtl.css'%}"
+  />
+</head>
+
+{% endblock appheader %} {% block appbody %}
+
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        {% for message in messages %}
+
+        <div class="alert alert-success">
+            <a class="close" href="#" data-dismiss="alert" style="color:red">X</a>
+            {{ message }}
+        </div>
+        {% endfor %}
+        <div class="content-header row ">
+            <div class="content-header-center col-md-12 col-12 " style="margin-bottom: 0rem;">
+                <div class=" text-center bg-transparent d-xl-none d-lg-none d-md-block d-sm-block d-xs-block"
+                    style="margin-bottom: 0rem; opacity: 0.5;">
+                    <img src="{% static 'images/2-t-croped_50.png'%}" class="img-fluid" alt="Brand logo"
+                        style="object-fit:contain; width:auto;  height:100px;">
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content-body">
+            <!-- account setting page start -->
+            <section id="page-account-settings">
+                <div class="row">
+
+                    <!-- left menu section -->
+                    <div class="col-md-3 mb-2 mb-md-0">
+                        <ul class="nav nav-pills flex-column mt-md-0 mt-1">
+                           
+                            <li class="nav-item">
+                                <a class="nav-link d-flex py-75  {% if group_company != True %} active {% endif%}"
+                                    id="account-pill-general" data-toggle="pill" href="#account-vertical-general"
+                                    aria-expanded="false">
+                                    <i class="feather icon-info mr-50 font-medium-3"></i>
+                                    {% trans 'المعلومات' %}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex py-75" id="account-pill-password" data-toggle="pill"
+                                    href="#account-vertical-password" aria-expanded="false">
+                                    <i class="feather icon-lock mr-50 font-medium-3"></i>
+                                    {% trans 'تغيير كلمة المرور' %}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex py-75" id="account-pill-info" data-toggle="pill"
+                                    href="#account-vertical-info" aria-expanded="false">
+                                    <i class="feather icon-phone-call mr-50 font-medium-3"></i>
+                                    {% trans 'العناوين والهواتف' %}
+                                </a>
+                            </li>                          
+                            
+                        </ul>
+                    </div>
+                    <!-- right content section -->
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <div class="tab-content">
+                                       
+                                        <div role="tabpanel"  class="tab-pane active"  id="account-vertical-general"
+                                            aria-labelledby="account-pill-general" aria-expanded="true">
+                                            <label for="account-username">{% trans 'الشعار' %}</label>
+                                            <hr>
+                                            <form id="form0"  method="POST" enctype="multipart/form-data"
+                                                name="form1">
+
+                                                {% csrf_token %}
+
+                                                <div class="media">
+                                                    <a href="javascript: void(0);">
+                                                        <img {% if company.logo %} src="{{company.logo.url}}" {% else %}
+                                                            src="{% static  '/NoImage/No-profile-image.png'%}"
+                                                            {% endif %} class="rounded mr-75" alt="profile image"
+                                                            style="object-fit:contain; width:auto;  height:175px;  max-width:175px;"
+                                                            id="imgLogo">
+
+                                                    </a>
+                                                    <div class="media-body mt-75">
+                                                        <div
+                                                            class="col-12 px-0 d-flex flex-sm-row flex-column justify-content-start">
+                                                            <label id="fileuploadlb"
+                                                                class="btn btn-sm btn-primary ml-50 mb-50 mb-sm-0 cursor-pointer"
+                                                                for="account-upload" onclick="thisFileUpload()">
+                                                                {% trans 'رفع الصورة' %}</label>
+                                                            <input type="file" id="file" name="myfile" accept="image/*"
+                                                                style="display:none;" onchange="myFunction()">
+
+                                                                <label id="undobtn" class="btn btn-sm btn-outline-warning ml-50"
+                                                                for="account-upload" onclick="undobtn()">
+                                                                {% trans 'تراجع' %}</label>
+                                                        </div>
+                                                         <p id="demo"></p>
+                                                       
+                                                        <p id="pfileuploadedto" class="d-none">
+                                                            {% trans 'File uploaded at:' %} <a id="aorgimg"
+                                                             href="#">{% if company.logo %} {{ company.logo.url }} {%else%} {% static  '/NoImage/No-profile-image.png'%}{% endif %}</a>
+                                                        </p>
+                                                       
+                                                        <p class="text-muted ml-75 mt-50"><small>{% trans 'Allowed' %}
+                                                                JPG, GIF or
+                                                                PNG.
+                                                                {% trans 'Max Size' %}
+                                                                800kB</small></p>
+                                                    </div>
+                                                </div>
+
+                                                <script>
+                                                    function thisFileUpload() {
+                                                       // console.log("click.");
+                                                        document.getElementById("file").click();
+                                                        // document.getElementById("demo").innerHTML = "";
+                                                    };
+                                                </script>
+                                                <script>
+                                                    var errormeassge = '{% trans "Exceeding the allowed image size" %}';
+                                                    var sizeinkilo = '{% trans "kilo byte" %}';
+                                                    var submitallowd = true;
+                                                     
+
+
+                                                    function myFunction(e) {
+                                                        
+                                                        if (document.getElementById('file').files.length == 0) {
+                                                          //  console.log("Suspect Cancel was hit, no files selected.");
+                                                                document.getElementById("imgLogo").src=document.getElementById('aorgimg').innerHTML;
+                                                               // console.log(document.getElementById('aorgimg'));
+                                                            // cancelButton.onclick();
+
+
+                                                        } else {
+                                                           // console.log("else.");
+                                                           // console.log(document.getElementById('file').files.length);
+                                                           // console.log(document.getElementById('aorgimg'));
+                                                            if (typeof FileReader !== "undefined") {
+                                                               // console.log("FileReader.");
+
+                                                                var file = document.getElementById('file').files[0];
+                                                                // check file size
+                                                                if (file.size < 800 * 1024) {
+                                                                    //document.getElementById("demo").innerHTML = "";
+                                                                    readURL(document.getElementById("file"));
+                                                                    document.getElementById("imgLogo").active;
+
+
+                                                                } else {
+                                                                    Errormessage = errormeassge + " " + (file.size /
+                                                                            1024)
+                                                                        .toFixed(0) + " " + sizeinkilo;                                                                   
+                                                                    alert(Errormessage);
+                                                                   
+                                                                }
+                                                            }
+                                                        }
+
+                                                    };
+
+                                                    function undobtn(e) {
+                                    
+                                                        document.getElementById("imgLogo").src = document.getElementById('aorgimg')
+                                                            .innerHTML;
+                                                            document.getElementById("file").value = '';
+                            
+                                                }
+                                                </script>
+                                                <script>
+                                                    function readURL(input) {
+
+                                                        if (input.files && input.files[0]) {
+                                                            var reader = new FileReader();
+
+                                                            reader.onload = function (e) {
+                                                                //alert(e.target.result);
+                                                                $('#imgLogo').attr('src', e.target.result);
+                                                            }
+
+                                                            reader.readAsDataURL(input.files[0]);
+                                                        }
+                                                    }
+                                                </script>
+                                                
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-username">{% trans 'اسم المستخدم' %}</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="account-username" disabled
+                                                                    placeholder="{% trans 'اسم المستخدم' %}"
+                                                                    value="{{company.user}}" required
+                                                                    data-validation-required-message="{% trans 'هذا الحقل مطلوب' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label for="account-e-mail">{% trans 'الايميل' %}</label>
+                                                                <input type="email" class="form-control"
+                                                                    id="account-e-mail" disabled
+                                                                    placeholder="{% trans 'الايميل' %}"
+                                                                    name="emailPearson"
+                                                                    value="{{ company.user.email|default_if_none:'' }}"
+                                                                    required
+                                                                    data-validation-required-message="{% trans 'هذا الحقل مطلوب' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="alert alert-warning alert-dismissible mb-2"
+                                                            role="alert">
+                                                            <button type="button" class="close" data-dismiss="alert"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                            <p class="mb-0">
+                                                                {% trans 'لم يتم تأكيد بريدك الإلكتروني. يرجى التحقق من البريد الوارد الخاص بك.' %}
+                                                            </p>
+                                                            <a
+                                                                href="javascript: void(0);">{% trans 'أعد إرسال التأكيد' %}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-name">{% trans 'الاسم الكامل' %}</label>
+                                                                <input type="text" class="form-control" name="full_name"
+                                                                    value="{{ company.full_name|default_if_none:'' }}"
+                                                                    placeholder="{% trans 'الاسم الكامل' %}" disabled
+                                                                    data-validation-required-message="{% trans 'This field is required' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label
+                                                                for="account-company">{% trans 'فرع الشركة' %}</label>
+                                                            <input type="text" class="form-control" id="account-company"
+                                                                name="companyPearson" disabled
+                                                                value="{{ company.company|default_if_none:"" }}"
+                                                                placeholder="{% trans 'فرع الشركة' %}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label
+                                                                for="accountTextarea">{% trans 'التوصيف الوظيفي' %}</label>
+                                                            <textarea name="updatedescription" class="form-control"
+                                                                id="accountTextareadescription" rows="3" disabled
+                                                                placeholder="{% trans 'نبذة عن التوصيف الوظيفي' %}"
+                                                                value="{{ company.description|default_if_none:''  }}">{{ company.description|default_if_none:""  }}</textarea>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                        <button type="submit" name="updatePersonalInfo"
+                                                            class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">{% trans 'حفظ' %}</button>
+
+
+
+                                                        <button type="reset"
+                                                            class="btn btn-outline-warning">{% trans 'الغاء' %}</button>
+                                                    </div>
+                                                    {% for Field in AddFields_arry %}
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label for="account-name">{{Field.FieldName}}</label>
+                                                                <input type="{{Field.valueType}}" class="form-control"
+                                                                    name="{{Field.FieldName}}"
+                                                                    value="{{ Field.FieldValue|default_if_none:"" }}"
+                                                                    placeholder="{% trans 'Value' %}"
+                                                                    data-validation-required-message="{% trans 'هذا الحقل مطلوب' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade " id="account-vertical-password" role="tabpanel"
+                                            aria-labelledby="account-pill-password" aria-expanded="false">
+                                            <form  method="POST" enctype="multipart/form-data" name="form3">
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-old-password">{% trans 'كلمة المرور القديمة' %}
+                                                                </label>
+                                                                <input type="password" class="form-control"
+                                                                    name="passwordOld" id="account-old-password"
+                                                                    required placeholder="{% trans 'كلمة المرور القديمة' %}"
+                                                                    data-validation-required-message="{% trans 'هذا الحقل مطلوب' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-new-password">{% trans 'كلمة المرور الجديدة' %}
+                                                                </label>
+                                                                <input type="password" id="account-new-password"
+                                                                    class="form-control" name="passwordNew1"
+                                                                    placeholder="{% trans 'كلمة المرور الجديدة' %}" required
+                                                                    data-validation-required-message="{% trans 'هذا الحقل مطلوب' %}"
+                                                                    minlength="6">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label
+                                                                    for="account-retype-new-password">{% trans 'أعد كتابة كلمة السر الجديدة' %}
+                                                                </label>
+                                                                <input type="password" class="form-control" required
+                                                                    id="account-retype-new-password" name="passwordNew2"
+                                                                    data-validation-match-match="password"
+                                                                    placeholder="{% trans 'كلمة المرور الجديدة' %}"
+                                                                    data-validation-required-message="{% trans 'هذا الحقل مطلوب' %}"
+                                                                    minlength="6">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                        <button type="submit" name="passwordFprm"
+                                                            class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">{% trans 'حفظ' %}
+                                                        </button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-warning">{% trans 'الغاء' %}</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="account-vertical-info" role="tabpanel"
+                                            aria-labelledby="account-pill-info" aria-expanded="false">
+                                            <form  method="POST" enctype="multipart/form-data" name="form2">
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label
+                                                                for="accountTextarea">{% trans 'العنوان التفصيلي' %}</label>
+                                                            <textarea name="updateAddress" class="form-control"
+                                                                id="accountTextarea" rows="3"
+                                                                placeholder="{% trans 'العنوان التفصيلي' %}"
+                                                                value="{{ company.address|default_if_none:''  }}">{{ company.address|default_if_none:""  }}</textarea>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="accountSelect">{% trans 'البلد' %}</label>
+                                                            <select class=" form-control" id="accountSelectcountry"
+                                                                name="accountSelectcountry">
+
+
+                                                                {% if LANGUAGE_CODE == 'ar' %}
+                                                                {% for org in country %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if dic_serch.country1 == org.id %}
+                                                                    selected="selected" {% endif %}>
+                                                                    {{org.name_ar}}
+                                                                </option>
+                                                                {% endfor %}
+                                                                {% else %}
+                                                                {% for org in country %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if org == company.country %}selected="selected"
+                                                                    {% endif %}>
+                                                                    {{org.name}}
+                                                                </option>
+                                                                {% endfor %}
+                                                                {% endif %}
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="accountSelect">{% trans 'المدينة' %}</label>
+                                                            <select class=" form-control" id="accountSelectcity"
+                                                                name="accountSelectcity">
+
+
+                                                                {% if LANGUAGE_CODE == 'ar' %}
+                                                                {% for org in city %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if org == company.city %}selected="selected"
+                                                                    {% endif %}>
+                                                                    {{org.name_ar}}
+                                                                </option>
+                                                                {% endfor %}
+                                                                {% else %}
+                                                                {% for org in city %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if org == company.city %}selected="selected"
+                                                                    {% endif %}>
+                                                                    {{org.name}}
+                                                                </option>
+                                                                {% endfor %}
+
+                                                                {% endif %}
+                                                            </select>
+
+                                                            <script>
+                                                                console.log(1);
+                                                                document.getElementById('accountSelectcountry')
+                                                                    .addEventListener('change', function () {
+                                                                        console.log(2);
+                                                                        var optionSelected = $(this).find(
+                                                                            "option:selected");
+                                                                        console.log(optionSelected.val());
+                                                                        const valueSelected = optionSelected
+                                                                            .val(); // get the selected subject ID from the HTML dropdown list 
+                                                                        var country_name = optionSelected.text();
+                                                                        console.log(optionSelected.text());
+                                                                        $.ajax({ // initialize an AJAX request
+                                                                            type: "GET",
+                                                                            url: '/getdetails',
+                                                                            data: {
+                                                                                'cnt': country_name,
+                                                                                'couid': valueSelected,
+                                                                                'type': 'city',
+                                                                                'csrfmiddlewaretoken': $(
+                                                                                        'input[name=csrfmiddlewaretoken]'
+                                                                                    )
+                                                                                    .val(),
+                                                                            },
+                                                                            success: function (
+                                                                                result
+                                                                            ) { // `data` is from `get_topics_ajax` view function
+                                                                                console.log(result);
+                                                                                $("#accountSelectcity option")
+                                                                                    .remove();
+                                                                                if (LANGUAGE_CODE ===
+                                                                                    "ar") {
+                                                                                    for (var i = result
+                                                                                            .length -
+                                                                                            1; i >=
+                                                                                        0; i--) {
+                                                                                        $("#accountSelectcity")
+                                                                                            .append(
+                                                                                                '<option value="' +
+                                                                                                result[
+                                                                                                    i]
+                                                                                                .id +
+                                                                                                '"{% if 5 == 5 %} selected="selected" {% endif %}> ' +
+                                                                                                result[
+                                                                                                    i]
+                                                                                                .name_ar +
+                                                                                                '</option>'
+                                                                                            );
+                                                                                    };
+                                                                                } else {
+
+                                                                                    for (var i = result
+                                                                                            .length -
+                                                                                            1; i >=
+                                                                                        0; i--) {
+                                                                                        $("#accountSelectcity")
+                                                                                            .append(
+                                                                                                '<option value="' +
+                                                                                                result[
+                                                                                                    i]
+                                                                                                .id +
+                                                                                                '"{% if 5 == 5 %} selected="selected" {% endif %}> ' +
+                                                                                                result[
+                                                                                                    i]
+                                                                                                .name +
+                                                                                                '</option>'
+                                                                                            );
+                                                                                    };
+                                                                                }
+                                                                            }
+                                                                        });
+                                                                    });
+                                                            </script>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="languageselect2">{% trans 'اللغة' %}</label>
+                                                            <select class="form-control" id="languageselect2"
+                                                                name="updatelang">
+                                                                {% if LANGUAGE_CODE == 'ar' %}
+                                                                {% for org in lang %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if org == company.lang %}selected="selected"
+                                                                    {% endif %}>
+                                                                    {{org.name_ar}}
+                                                                </option>
+                                                                {% endfor %}
+                                                                {% else %}
+                                                                {% for org in lang %}
+                                                                <option value="{{org.id}}"
+                                                                    {% if org == company.lang %}selected="selected"
+                                                                    {% endif %}>
+                                                                    {{org.name}}
+                                                                </option>
+                                                                {% endfor %}
+                                                                {% endif %}
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label for="account-phone1">{% trans 'الهاتف' %} </label>
+                                                                <input type="text" class="form-control"
+                                                                    id="account-phone1" required
+                                                                    placeholder="{% trans 'phone Number' %}"
+                                                                    name="phoneN1"
+                                                                    value="{{ company.phoneN1|default_if_none:""  }}"
+                                                                    data-validation-required-message="{% trans 'هذا الحقل مطلوب' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label for="account-phone2">{% trans 'الهاتف' %}
+                                                                    2</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="account-phone2" required name="phoneN2"
+                                                                    value="{{ company.phoneN2|default_if_none:""  }}"
+                                                                    placeholder="{% trans 'رقم الهاتف' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="controls">
+                                                                <label for="account-phone3">{% trans 'رقم الموبايل' %}
+                                                                </label>
+                                                                <input type="text" class="form-control"
+                                                                    id="account-phone3" required name="mobileN1"
+                                                                    value="{{ company.mobileN1|default_if_none:''  }}"
+                                                                    placeholder="{% trans 'رقم الموبايل' %}"
+                                                                    data-validation-required-message="{% trans 'هذا الحقل مطلوب' %}">
+                                                            </div>
+                                                        </div>
+                                                    </div>                                                   
+                                                    
+                                                    <div
+                                                        class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                        <button type="submit" name="updateAddressInfo"
+                                                            class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">{% trans 'حفظ' %}
+                                                        </button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-warning">{% trans 'الغاء' %}</button>
+
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                      
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- add new sidebar ends -->
+
+        <!-- account setting page end -->
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- END: Content-->
+
+
+
+<!-- END: Content-->
+
+
+
+{% endblock appbody %}
+
+{% block appfooter %}
+
+<!-- BEGIN: Vendor JS-->
+<script src="{% static '/app-assets/vendors/js/vendors.min.js' %}"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="{% static '/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+
+<script src="{% static '/app-assets/vendors/js/extensions/swiper.min.js' %}"></script>
+<!-- END: Page Vendor JS-->
+<!-- BEGIN: Page JS-->
+<script src="{% static '/app-assets/js/scripts/pages/app-ecommerce-details.js' %}"></script>
+<script src="{% static '/app-assets/js/scripts/forms/number-input.js' %}"></script>
+
+
+
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+
+<script src="{% static '/app-assets/vendors/js/ui/prism.min.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/extensions/wNumb.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/extensions/nouislider.min.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+
+<script src="{% static '/app-assets/js/core/app-menu.js' %}"></script>
+<script src="{% static '/app-assets/js/core/app.js' %}"></script>
+<script src="{% static '/app-assets/js/scripts/components.js' %}"></script>
+
+
+
+
+<script src="{% static '/app-assets/js/scripts/pages/app-ecommerce-shop.js' %}"></script>
+
+<script src="{% static '/app-assets/js/scripts/pages/app-user.js' %}"></script>
+<script src="{% static '/app-assets/js/scripts/ui/data-list-view.js' %}"></script>
+
+<!-- BEGIN: number-input-->
+<script src="{% static '/app-assets/js/scripts/forms/number-input.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js' %}"></script>
+<!-- END: number-input-->
+
+<!-- BEGIN: select-input-->
+<script src="{% static '/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+<!-- END: select-input-->
+
+<!-- marketer -->
+
+<script src="{% static '/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/pickers/pickadate/picker.js' %}"></script>
+<script src="{% static '/app-assets/vendors/js/pickers/pickadate/picker.date.js' %}"></script>
+
+<script src="{% static '/assets/js/scripts.js' %}"></script>
+
+<script src="{% static '/app-assets/js/scripts/forms/select/form-select2.js' %}"></script>
+{% endblock appfooter %}

@@ -1,0 +1,275 @@
+{% extends 'base.html' %} {% load static %} {% block appheader %}
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+  />
+  <meta
+    name="description"
+    content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities."
+  />
+  <meta
+    name="keywords"
+    content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
+  />
+  <meta name="author" content="PIXINVENT" />
+  <title>نظام تنظيم ومتابعة نقل الطرود</title>
+  <link
+    rel="apple-touch-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600"
+    rel="stylesheet"
+  />
+
+  <!-- BEGIN: Vendor CSS-->
+
+  
+  
+  
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/vendors-rtl.min.css'%}"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/vendors/css/forms/select/select2.min.css'%}">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap-extended.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/colors.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/components.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/themes/dark-layout.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/themes/semi-dark-layout.css'%}"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/core/colors/palette-gradient.css'%}"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/pages/faq.css'%}">
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/custom-rtl.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static  '/assets/css/style-rtl.css'%}">
+ 
+  
+ 
+</head>
+
+{% endblock appheader %} {% block appbody %}
+
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper">
+    <div class="content-header row">
+      <div
+        class="content-header-center col-md-12 col-12"
+        style="margin-bottom: 0rem"   >
+        <div class="text-center d-xl-none d-lg-none d-md-block d-sm-block d-xs-block"
+          style="margin-bottom: 0rem; opacity: 0.5"  >
+          <img
+            src="{% static 'images/2-t-croped_50.png'%}"
+            class="img-fluid"
+            alt="Brand logo"
+            style="object-fit: contain; width: auto; height: 100px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="content-body">
+     
+    <section class="faq">
+        <div class="row">
+          
+            <div class="col-xl-12 col-md-12 col-12">
+                <div class="card bg-transparent border-0 shadow-none collapse-icon accordion-icon-rotate">
+                    <div class="card-body p-0">
+                        <div class="accordion search-content-info" id="accordionExample">
+                            <div class="collapse-margin search-content mt-0">
+                                <div class="card-header" id="headingOne" role="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <span class="lead collapse-title">
+                                      ما المقصود برقم التتبع وأين يمكنني العثور عليه؟
+                                    </span>
+                                </div>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      يُعَد رقم التتبع أو معرِّف التتبع مزيجًا من الأرقام وربما الأحرف التي تميز شحنتك بشكل فريد من أجل التتبع المحلي أو الدولي.  
+
+عادةً ما تكون شركة الشحن أو المتجر الإلكتروني قادرًا على توفير رقم التتبع أو معرِّف التتبع. وإذا كنت قد طلبت منتجًا من متجر إلكتروني، فغالبًا ما يوجد رقم التتبع أو معرِّف التتبع في رسالة التأكيد عبر البريد الإلكتروني أو إشعار تتبع الشحنة.
+بخلاف ذلك، يُرجى التواصل مع شركة الشحن أو المتجر الإلكتروني الخاص بك.
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse-margin">
+                                <div class="card-header" id="headingTwo" role="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <span class="lead collapse-title collapsed">
+                                      لماذا لم تتغير حالة الشحنة الخاصة بي؟
+                                    </span>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      فيما يخص معظم الشحنات، فإننا نقدم تتبع الأحداث الرئيسية فقط، ما يعني أن الأمر قد يستغرق بعض الوقت قبل عرض حدث تتبع جديد. وتستمر حزمتك في طريقها إلى وجهتها رغم الوقت المنقضي بين أحداث التتبع. وحسب الوجهة، يمكن أن تتباطأ الحزمة في الوصول إلى بلد المقصد بسبب المسافة وأوقات النقل الخاصة بالخدمة المحددة.
+
+                                      قد تتأخر شحنتك أيضًا. يمكن أن تتسبب أحداث خارجة عن سيطرة DHL في تأخيرات في التسليم، مثل أحوال الطقس أو التوقفات لأسباب محلية مثل العطلات الرسمية أو الجمارك أو الإضرابات. إذا لم تصل شحنتك خلال 10 أيام بعد وقت التسليم المتوقع، فيُرجى التواصل مع التاجر أو المتجر الإلكتروني الخاص بك. ويمكن أن يُجري التاجر أو المتجر الإلكتروني بوصفهما شريكَين في العقد تحقيقًا بشأن العناصر المفقودة.
+                                      
+                                      تُرجى أيضًا ملاحظة أن لبعض الحزم أحداث تتبع محدودة في بلد المنشأ وليست لها أحداث تتبع في بلد المقصد.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse-margin search-content">
+                                <div class="card-header" id="headingThree" role="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <span class="lead collapse-title collapsed">
+                                      من سيوصل شحنة حلول التجارة الإلكترونية الخاصة بي؟
+                                    </span>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      إننا نتشارك مع 220 مقدمًا لخدمات البريد حول العالم يسلِّمون الشحنات نيابة عنك.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse-margin search-content">
+                                <div class="card-header" id="headingFour" role="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <span class="lead collapse-title collapsed">
+                                      هل يمكن تغيير عنوان التسليم الخاص بي؟
+                                    </span>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      للأسف، بمجرد خروج الحزمة من منشأة التاجر، تصبح حلول التجارة الإلكترونية غير قادرة على تعديل عنوان التسليم. ويُرجى التواصل مع التاجر أو المتجر الإلكتروني.
+
+ 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse-margin search-content">
+                                <div class="card-header" id="headingFive" role="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <span class="lead collapse-title collapsed">
+                                      شحنتي تالفة أو المحتوى مفقود. ماذا يمكنني أن أفعل؟
+                                    </span>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      عند توصيل شحنتك بواسطة البريد المحلي، ينبغي لك أن تتوجه إلى مكتب البريد المحلي الخاص بك خلال 7 أيام للتقدم بتقرير تلف.
+
+يُرجى إرسال تقرير التلف إلى التاجر أو المتجر الإلكتروني الخاص بك. وسيقوم التاجر أو المتجر الإلكتروني الخاص بك حينها بطلب الطرد التالف أو المفقود من خلال خدمة عملاء حلول التجارة الإلكترونية.
+
+يُرجى العلم بأنه يمكن للتاجر أو المتجر الإلكتروني فقط تقديم طلب لأنهما شريكا التعاقد لدى حلول التجارة الإلكترونية.
+
+ 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse-margin search-content">
+                                <div class="card-header" id="headingSix" role="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <span class="lead collapse-title collapsed">
+                                      ما هي خدمة النقل الدولي السريع؟
+                                    </span>
+                                </div>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      تتيح لك خدمة النقل الدولي السريع شحن الطرود والوثائق المستعجلة التي لا يتجاوز وزنها 30 كيلو جرام (66 رطلاً) إلى أي مكان في العالم، وذلك باستخدام أسرع الوسائل المتاحة.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse-margin search-content">
+                                <div class="card-header" id="headingSeven" role="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    <span class="lead collapse-title collapsed">
+                                      لماذا تحتجز الجمارك الشحنة الخاصة بي؟
+                                    </span>
+                                </div>
+                                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      يجب أن تخضع الشحنات للتخليص الجمركي. وتختلف أوقات عملية التخليص الجمركي من دولة إلى أخرى ولا يمكن أن تؤثر خدمة عملاء حلول التجارة الإلكترونية فيها. وفي بعض الدول، قد تكون ثمة رسوم وضرائب مستحقة. وقد تحتجز الجمارك الشحنة الخاصة بك بسبب حاجتها إلى مزيد من المعلومات. وفي هذه الحالة، سيتواصلون معك.
+
+ 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse-margin search-content">
+                                <div class="card-header" id="headingEight" role="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                    <span class="lead collapse-title collapsed">
+                                      ما الرسوم والضرائب؟
+                                    </span>
+                                </div>
+                                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      تكون الرسوم والضرائب صورة من الضرائب الاستهلاكية. وتُفرض الرسوم الجمركية على سلع معينة مشتراة من الخارج. وتُفرض ضرائب القيمة المضافة (VAT) عادةً في الدولة التي تُستهلك فيها البضائع المشتراة. وتختلف الرسوم والضرائب حسب الدولة. وتجري تسوية الرسوم والضرائب مع مكتب البريد أو مكتب الجمارك حسب الدولة. ويمكنك معرفة مزيد من المعلومات عن الجمارك على موقع الويب الخاص بهيئة الجمارك المحلية لديك.
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+   
+    
+  
+  </div>
+
+  <!-- END: Content-->
+
+  {% endblock appbody %} {% block appfooter %}
+
+  <!-- BEGIN: Vendor JS-->
+  <script src="{% static '/app-assets/vendors/js/vendors.min.js' %}"></script>
+  <script src="{% static '/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+  
+  <script src="{% static '/app-assets/js/core/app-menu.js' %}"></script>
+  <script src="{% static '/app-assets/js/core/app.js' %}"></script>
+  <script src="{% static '/app-assets/js/scripts/components.js' %}"></script>
+
+
+  <!-- END: number-input-->
+
+  
+
+  <script src="{% static '/app-assets/js/scripts/pages/faq-kb.js' %}"></script>
+
+
+  
+  {% endblock appfooter %}
+</div>

@@ -1,0 +1,204 @@
+{% extends 'basedashboard.html' %} {% load static %} {% block appheader %}
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+  />
+  <meta
+    name="description"
+    content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities."
+  />
+  <meta
+    name="keywords"
+    content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
+  />
+  <meta name="author" content="PIXINVENT" />
+  <title> نظام تنظيم ومتابعة نقل الطرود-التحكم</title>
+  <link
+    rel="apple-touch-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600"
+    rel="stylesheet"
+  />
+
+  <!-- BEGIN: Vendor CSS-->
+
+  
+ 
+ 
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Page CSS-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/colors.css'%}">
+
+ 
+ 
+
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/vendors-rtl.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap-extended.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/components.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/custom-rtl.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/assets/css/style-rtl.css'%}"
+  />
+</head>
+
+{% endblock appheader %} {% block appbody %}
+
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper">
+    <div class="content-header row">
+      <div
+        class="content-header-center col-md-12 col-12"
+        style="margin-bottom: 0rem"
+      >
+        <div
+          class="text-center d-xl-none d-lg-none d-md-block d-sm-block d-xs-block"
+          style="margin-bottom: 0rem; opacity: 0.5"
+        >
+          <img
+            src="{% static 'images/2-t-croped_50.png'%}"
+            class="img-fluid"
+            alt="Brand logo"
+            style="object-fit: contain; width: auto; height: 100px"
+          />
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="content-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">الفرع الحالي</h4>
+            </div>
+            <div class="card-content">
+                <div class="card-body pb-0">
+                    <div class="card-text">                       
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-mx-0 table-borderless mb-0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h1 class="primary">سوريا دمشق</h1>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+
+      <section id="input-group-buttons">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">تسجيل حركة طرد</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <p>أدخل رقم التتبع (الباركود) لتنفيذ عملية حركة لبوليصة الشحن المقصودة</p>
+                            <div class="row">
+                                <div class="col-md-12 col-12 mb-1">
+                                    <fieldset>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="رقم التتبع (الباركود)" aria-describedby="button-addon2">
+                                            <div class="input-group-append" id="button-addon2">
+                                                <button class="btn btn-primary" type="button">تسجيل حركة</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                              
+                            </div>
+                            <div class="alert alert-success" role="alert">
+                                <h4 class="alert-heading">نجاح</h4>
+                                <p class="mb-0">
+                                   تم تسجيل الحركة في المركز الحالي
+                                </p>
+                            </div>
+                            <div class="alert alert-danger" role="alert">
+                                <h4 class="alert-heading">خطأ</h4>
+                                <p class="mb-0">
+                                   لم يتم تسجيل الحركة
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    {% endblock appbody %} {% block appfooter %}
+
+    <script src="{% static '/app-assets/vendors/js/vendors.min.js' %}"></script>
+
+    <script src="{% static '/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+
+    <script src="{% static '/app-assets/vendors/js/extensions/swiper.min.js' %}"></script>
+
+    <script src="{% static '/app-assets/js/core/app-menu.js' %}"></script>
+    <script src="{% static '/app-assets/js/core/app.js' %}"></script>
+    <script src="{% static '/app-assets/js/scripts/components.js' %}"></script>
+
+    <script src="{% static '/assets/js/scripts.js' %}"></script>
+
+    <script src="{% static '/app-assets/js/scripts/forms/select/form-select2.js' %}"></script>
+
+    {% endblock appfooter %}
+  </div>
+</div>

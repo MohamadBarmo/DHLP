@@ -1,0 +1,182 @@
+{% extends 'base_accounts.html' %}
+
+{% load static  %}
+{% load i18n %}
+
+{% block appheader %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
+    <title>نظام تنظيم ومتابعة نقل الطرود</title>
+    <link rel="apple-touch-icon" href="{% static  '/app-assets/images/ico/logoico.ico'%}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static  '/app-assets/images/ico/logoico.ico'%}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+
+
+
+
+
+   
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/vendors/css/vendors-rtl.min.css'%}">
+    <!-- END: Vendor CSS-->
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/bootstrap.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/bootstrap-extended.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/colors.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/components.css'%}">   
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/pages/authentication.css'%}">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static  '/assets/css/login/auth_login.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/custom-rtl.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/assets/css/style-rtl.css'%}">
+    <!-- END: Custom CSS-->
+
+   
+
+</head>
+
+{% endblock appheader %}
+
+
+{% block appbody %}
+
+<div class="col-xl-8 col-11 d-flex justify-content-center">
+    <div class="card bg-authentication rounded-0 mb-0">
+        <div class="row m-0">
+            <div class="col-sm-12 profile-card-1 mt-1  d-xs-block d-sm-block  d-md-block d-lg-none d-xl-none">
+                <div class="card border-info text-center bg-transparent  h-100  card-mb-0">
+                    <div class="card-header mx-auto">
+                        <div class="avatar avatar-xl">
+
+                        </div>
+                        <span class="brand-logo">
+
+                            <img src="{% static 'images/2-t.png'%}" class="img-fluid" alt="Brand logo">
+
+                        </span>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-lg-6 d-lg-block d-none text-center align-self-center px-1 py-0">
+                <img src="{% static  '/images/2-t.png'%}" alt="branding logo">
+            </div>
+            <div class="col-lg-6 col-12 p-0">
+                <div class="card rounded-0 mb-0 px-2">
+                    <div class="card-header pb-1">
+                        <div class="card-title">
+                            <h4 class="mb-0">تسجيل دخول</h4>
+                        </div>
+                    </div>
+                    <p class="px-2">مرحبًا بك مرة أخرى، يرجى تسجيل الدخول إلى حسابك.</p>
+                    <div id="messages">
+                        {% for message in messages %}
+
+                        <div class="alert alert-success">
+                            <a class="close" href="#" data-dismiss="alert">×</a>
+                            {{ message }}
+                        </div>
+
+                        {% endfor %}
+                    </div>
+                    <div id="divscripterrors">
+
+                    </div>
+                    <div class="card-content ">
+                        <div class="card-body pt-1">
+                            <form action="" method="POST" name='loginform' onSubmit="return formValidation();">
+                                {% csrf_token%}
+                                <fieldset class="form-label-group form-group position-relative has-icon-left">
+                                    <input type="text" class="form-control" id="usernamelogin" name="usernamelogin"
+                                        placeholder="اسم المستخدم"  onblur="checkrequired(this)">
+                                    <div class="form-control-position">
+                                        <i class="feather icon-user"></i>
+                                    </div>
+                                    <label for="username">اسم المستخدم</label>
+                                </fieldset>
+
+                                <fieldset class="form-label-group position-relative has-icon-left">
+                                    <input type="password" class="form-control" id="password" name="password"
+                                        placeholder="{% trans 'كلمة المرور' %}">
+                                    <div class="form-control-position">
+                                        <i class="feather icon-lock"></i>
+                                    </div>
+                                    <label for="user-password">{% trans 'كلمة المرور' %}</label>
+                                </fieldset>
+                                <div class="form-group d-flex justify-content-between align-items-center">
+                                    <div class="text-left">
+                                        <fieldset class="checkbox">
+                                            <div class="vs-checkbox-con vs-checkbox-primary">
+                                                <input type="checkbox">
+                                                <span class="vs-checkbox">
+                                                    <span class="vs-checkbox--check">
+                                                        <i class="vs-icon feather icon-check"></i>
+                                                    </span>
+                                                </span>
+                                                <span class="">{% trans 'تذكرني' %}</span>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                   
+                                </div>
+
+                                <button type="submit"
+                                    class="btn btn-primary  float-left  btn-inline">{% trans 'دخول' %}</button>
+                               
+
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="login-footer">
+                        <div class="divider">
+                            <div class="divider-text"></div>
+                        </div>
+                        
+                        <div class="text-right"><a href="{% url 'main:home'%}" class="card-link">
+                                {% trans 'العودة الى الصفحة الرئيسية'%} </a></div>
+                        <!-- <div class="footer-btn d-inline">
+                            <a href="#" class="btn btn-facebook"><span class="fa fa-facebook"></span></a>
+                            <a href="#" class="btn btn-twitter white"><span class="fa fa-twitter"></span></a>
+                            <a href="#" class="btn btn-google"><span class="fa fa-google"></span></a>
+                            <a href="#" class="btn btn-github"><span class="fa fa-github-alt"></span></a>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock appbody %}
+
+
+    {% block appfooter %}
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="{% static '/app-assets/vendors/js/vendors.min.js' %}"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{% static '/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="{% static '/app-assets/js/core/app-menu.js' %}"></script>
+    <script src="{% static '/app-assets/js/core/app.js' %}"></script>
+    <script src="{% static '/app-assets/js/scripts/components.js' %}"></script>
+    <script src="{% static '/assets/js/scripts.js' %}"></script>
+    <script src="{% static '/assets/js/login/auth_login.js' %}"></script>
+
+    {% endblock appfooter %}

@@ -1,0 +1,363 @@
+{% extends 'base.html' %} {% load static %} {% block appheader %}
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+  />
+  <meta
+    name="description"
+    content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities."
+  />
+  <meta
+    name="keywords"
+    content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
+  />
+  <meta name="author" content="PIXINVENT" />
+  <title>نظام تنظيم ومتابعة نقل الطرود</title>
+  <link
+    rel="apple-touch-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600"
+    rel="stylesheet"
+  />
+
+  <!-- BEGIN: Vendor CSS-->
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/extensions/nouislider.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/ui/prism.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/forms/select/select2.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/extensions/swiper.min.css'%}"
+  />
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Page CSS-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}"
+  />
+  <!-- Input Number-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css'%}"
+  />
+  <!-- END: Input Numbe-->
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/plugins/extensions/noui-slider.min.css'%}"
+  />
+
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/vendors-rtl.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap-extended.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/colors.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/components.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/themes/dark-layout.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/themes/semi-dark-layout.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/pages/app-user.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/core/colors/palette-gradient.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/pages/search.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/pages/app-ecommerce-shop.css'%}"
+  />
+  <!--  marketer -->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/plugins/forms/validation/form-validation.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/pickers/pickadate/pickadate.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}"
+  />
+  <!--  marketer -->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/custom-rtl.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/assets/css/style-rtl.css'%}"
+  />
+</head>
+
+{% endblock appheader %} {% block appbody %}
+
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper">
+    <div class="content-header row">
+      <div
+        class="content-header-center col-md-12 col-12"
+        style="margin-bottom: 0rem"
+      >
+        <div
+          class="text-center d-xl-none d-lg-none d-md-block d-sm-block d-xs-block"
+          style="margin-bottom: 0rem; opacity: 0.5"
+        >
+          <img
+            src="{% static 'images/2-t-croped_50.png'%}"
+            class="img-fluid"
+            alt="Brand logo"
+            style="object-fit: contain; width: auto; height: 100px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="content-body">
+      <!-- Search Bar -->
+      <section id="search-bar">
+        <div class="search-bar">
+          <form method="GET" name="form10">
+            {% csrf_token %}
+
+            <fieldset class="form-group position-relative">
+              <div class="input-group">
+                <input type="text" class="form-control border-success" value="{{search_text|default_if_none:"" }}" maxlength="75"
+                name="searshFiled1" placeholder=" أدخل رقم التتبع الخاص بك "
+                aria-label="Amount">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="submit">
+                    تتبع الشحنة
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <div class="content-body">
+      <div class="card border-info text-center col-lg-12 col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">نتيجة تتبع الشحنة رقم 00000
+            </h4>
+          </div>
+          <div class="card-content">
+            <div class="card-body">
+              <ul class="activity-timeline timeline-left list-unstyled">
+                <li>
+                  <div class="timeline-icon bg-primary">
+                    <i class="feather icon-plus font-medium-2"></i>
+                  </div>
+                  <div class="timeline-info">
+                    <p class="font-weight-bold">مغادرة</p>
+                    <span>
+                         فرع الشركة  سوريا دمشق
+                      </span
+                    >
+                  </div>
+                  <small class="">يوم 25/4/2024 الساعة 8 مساءً</small>
+                </li>
+                <li>
+                  <div class="timeline-icon bg-warning">
+                    <i class="feather icon-alert-circle font-medium-2"></i>
+                  </div>
+                  <div class="timeline-info">
+                    <p class="font-weight-bold">حركة</p>
+                    <span> فرع الشركة  سوريا حلب</span>
+                  </div>
+                  <small class="">يوم 26/4/2024 الساعة 8 مساءً</small>
+                </li>
+                <li>
+                  <div class="timeline-icon bg-success">
+                    <i class="feather icon-check font-medium-2"></i>
+                  </div>
+                  <div class="timeline-info">
+                    <p class="font-weight-bold">وصول</p>
+                    <span> فرع الشركة  تركيا غازي عنتاب </span>                   
+                    <p >تم اشعار العميل بوصول الشحنة الى مقصدها</p>
+                  </div>
+                  <small class="">يوم 27/4/2024 الساعة 8 مساءً</small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-body">
+        <div class="card border-info text-center col-lg-12 col-sm-12">
+            <div class="card">
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- error 404 -->
+                <section class="row flexbox-container">
+                    <div class="col-xl-12 col-md-12 col-12 d-flex justify-content-center">
+                        <div class="card auth-card bg-transparent shadow-none rounded-0 mb-0 w-100">
+                            <div class="card-content">
+                                <div class="card-body text-center">
+                                    <img src="{% static  '/app-assets/images/pages/404.png'%}" class="img-fluid align-self-center" alt="branding logo">
+                                    <h1 class="font-large-2 my-1"> رقم التتبع غير موجود!</h1>
+                                    <p class="p-2">
+                                      عذرًا، لم تكن محاولتك للتتبع ناجحة. يرجى التحقق من رقم التتبع الخاص بك.
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </section>
+                <!-- error 404 end -->
+
+            </div>
+        </div>
+    </div>
+    
+  
+  </div>
+
+  <!-- END: Content-->
+
+  {% endblock appbody %} {% block appfooter %}
+
+  <!-- BEGIN: Vendor JS-->
+  <script src="{% static '/app-assets/vendors/js/vendors.min.js' %}"></script>
+  <!-- BEGIN Vendor JS-->
+
+  <!-- BEGIN: Page Vendor JS-->
+  <script src="{% static '/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+  <!-- END: Page Vendor JS-->
+
+  <!-- BEGIN: Theme JS-->
+
+  <script src="{% static '/app-assets/vendors/js/extensions/swiper.min.js' %}"></script>
+  <!-- END: Page Vendor JS-->
+  <!-- BEGIN: Page JS-->
+  <script src="{% static '/app-assets/js/scripts/pages/app-ecommerce-details.js' %}"></script>
+  <script src="{% static '/app-assets/js/scripts/forms/number-input.js' %}"></script>
+
+  <!-- BEGIN Vendor JS-->
+
+  <!-- BEGIN: Page Vendor JS-->
+
+  <script src="{% static '/app-assets/vendors/js/ui/prism.min.js' %}"></script>
+  <script src="{% static '/app-assets/vendors/js/extensions/wNumb.js' %}"></script>
+  <script src="{% static '/app-assets/vendors/js/extensions/nouislider.min.js' %}"></script>
+  <script src="{% static '/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+
+  <script src="{% static '/app-assets/js/core/app-menu.js' %}"></script>
+  <script src="{% static '/app-assets/js/core/app.js' %}"></script>
+  <script src="{% static '/app-assets/js/scripts/components.js' %}"></script>
+
+  <script src="{% static '/app-assets/js/scripts/pages/app-ecommerce-shop.js' %}"></script>
+
+  <script src="{% static '/app-assets/js/scripts/pages/app-user.js' %}"></script>
+  <script src="{% static '/app-assets/js/scripts/ui/data-list-view.js' %}"></script>
+
+  <!-- BEGIN: number-input-->
+  <script src="{% static '/app-assets/js/scripts/forms/number-input.js' %}"></script>
+  <script src="{% static '/app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js' %}"></script>
+  <!-- END: number-input-->
+
+  <!-- BEGIN: select-input-->
+  <script src="{% static '/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+  <!-- END: select-input-->
+
+  <!-- marketer -->
+
+  <script src="{% static '/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+  <script src="{% static '/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js' %}"></script>
+  <script src="{% static '/app-assets/vendors/js/pickers/pickadate/picker.js' %}"></script>
+  <script src="{% static '/app-assets/vendors/js/pickers/pickadate/picker.date.js' %}"></script>
+
+  <script src="{% static '/assets/js/scripts.js' %}"></script>
+
+  <script src="{% static '/app-assets/js/scripts/forms/select/form-select2.js' %}"></script>
+
+  <!-- <script>
+                let elementhome = document.getElementById("ullihomeactive");
+                elementhome.classList.add("active");
+            </script>-->
+  {% endblock appfooter %}
+</div>

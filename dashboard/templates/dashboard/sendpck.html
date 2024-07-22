@@ -1,0 +1,493 @@
+{% extends 'basedashboard.html' %} {% load static %} {% block appheader %}
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+  />
+  <meta
+    name="description"
+    content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities."
+  />
+  <meta
+    name="keywords"
+    content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
+  />
+  <meta name="author" content="PIXINVENT" />
+  <title> نظام تنظيم ومتابعة نقل الطرود-التحكم</title>
+  <link
+    rel="apple-touch-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600"
+    rel="stylesheet"
+  />
+
+  <!-- BEGIN: Vendor CSS-->
+
+  
+ 
+ 
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Page CSS-->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/colors.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/plugins/forms/wizard.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/core/colors/palette-gradient.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/plugins/forms/validation/form-validation.css'%}">
+ 
+
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/vendors-rtl.min.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap-extended.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/components.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/custom-rtl.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/assets/css/style-rtl.css'%}"
+  />
+</head>
+
+{% endblock appheader %} {% block appbody %}
+
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper">
+    <div class="content-header row">
+      <div
+        class="content-header-center col-md-12 col-12"
+        style="margin-bottom: 0rem"
+      >
+        <div
+          class="text-center d-xl-none d-lg-none d-md-block d-sm-block d-xs-block"
+          style="margin-bottom: 0rem; opacity: 0.5"
+        >
+          <img
+            src="{% static 'images/2-t-croped_50.png'%}"
+            class="img-fluid"
+            alt="Brand logo"
+            style="object-fit: contain; width: auto; height: 100px"
+          />
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="content-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">الفرع الحالي</h4>
+            </div>
+            <div class="card-content">
+                <div class="card-body pb-0">
+                    <div class="card-text">                       
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-mx-0 table-borderless mb-0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h1 class="primary">سوريا دمشق</h1>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <section class="input-validation">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">إرسال الشحنة</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <form class="form-horizontal" novalidate>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label><h3>معلومات المرسل</h3></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>الاسم الاول</label>
+                                            <div class="controls">
+                                                <input type="text" name="text" class="form-control" data-validation-required-message="هذا الحقل مطلوب" placeholder="أدخل الاسم الاول للمرسل">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>الاسم الاخير</label>
+                                            <div class="controls">
+                                                <input type="text" name="text" class="form-control" data-validation-required-message="هذا الحقل مطلوب" placeholder="أدخل الاسم الاخير للمرسل">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>البلد</label>
+                                            <div class="controls">
+                                                <select class="custom-select form-control" id="location" name="location">
+                                                    <option value="">New York</option>
+                                                    <option value="Amsterdam">Chicago</option>
+                                                    <option value="Berlin">San Francisco</option>
+                                                    <option value="Frankfurt">Boston</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>المدينة</label>
+                                            <div class="controls">
+                                                <select class="custom-select form-control" id="location" name="location">
+                                                    <option value="">New York</option>
+                                                    <option value="Amsterdam">Chicago</option>
+                                                    <option value="Berlin">San Francisco</option>
+                                                    <option value="Frankfurt">Boston</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>رقم الهاتف</label>
+                                            <div class="controls">                                               
+                                                <fieldset class="form-group position-relative has-icon-left input-divider-left">
+                                                    <input type="text" name="digit" class="form-control" data-validation-regex-regex="([^a-z]*[A-Z]*)*" data-validation-containsnumber-regex="([^0-9]*[0-9]+)+" data-validation-required-message="يجب أن يكون حقل الأرقام رقميًا والحد الأدنى 12 الحد الأقصى 16 رقمًا" maxlength="16" minlength="12" placeholder="ادخل رقم هاتف المرسل">
+                                                    <div class="form-control-position">
+                                                        <i class="feather icon-phone"></i>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>الايميل</label>
+                                            <div class="controls">
+                                                <input type="email" name="email" class="form-control" data-validation-required-message="يجب أن يكون بريدًا إلكترونيًا صالحًا" placeholder="أدخل ايميل المرسل">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>اسم الشارع</label>
+                                            <div class="controls">
+                                                <input type="text" name="text" class="form-control" data-validation-required-message="هذا الحقل مطلوب" placeholder="أدخل اسم الشارع لعنوان المرسل">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>اسم او رقم المبنى</label>
+                                            <div class="controls">
+                                                <input type="text" name="text" class="form-control" data-validation-required-message="هذا الحقل مطلوب" placeholder="أدخل اسم او رقم المبنى ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label><h3>معلومات المستلم</h3></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>الاسم الاول</label>
+                                            <div class="controls">
+                                                <input type="text" name="text" class="form-control" data-validation-required-message="هذا الحقل مطلوب" placeholder="أدخل الاسم الاول للمستلم">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>الاسم الاخير</label>
+                                            <div class="controls">
+                                                <input type="text" name="text" class="form-control" data-validation-required-message="هذا الحقل مطلوب" placeholder="أدخل الاسم الاخير للمستلم">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>البلد</label>
+                                            <div class="controls">
+                                                <select class="custom-select form-control" id="location" name="location">
+                                                    <option value="">New York</option>
+                                                    <option value="Amsterdam">Chicago</option>
+                                                    <option value="Berlin">San Francisco</option>
+                                                    <option value="Frankfurt">Boston</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>المدينة</label>
+                                            <div class="controls">
+                                                <select class="custom-select form-control" id="location" name="location">
+                                                    <option value="">New York</option>
+                                                    <option value="Amsterdam">Chicago</option>
+                                                    <option value="Berlin">San Francisco</option>
+                                                    <option value="Frankfurt">Boston</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>رقم الهاتف</label>
+                                            <div class="controls">                                               
+                                                <fieldset class="form-group position-relative has-icon-left input-divider-left">
+                                                    <input type="text" name="digit" class="form-control" data-validation-regex-regex="([^a-z]*[A-Z]*)*" data-validation-containsnumber-regex="([^0-9]*[0-9]+)+" data-validation-required-message="يجب أن يكون حقل الأرقام رقميًا والحد الأدنى 12 الحد الأقصى 16 رقمًا" maxlength="16" minlength="12" placeholder="ادخل رقم هاتف المستلم">
+                                                    <div class="form-control-position">
+                                                        <i class="feather icon-phone"></i>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>الايميل</label>
+                                            <div class="controls">
+                                                <input type="email" name="email" class="form-control" data-validation-required-message="يجب أن يكون بريدًا إلكترونيًا صالحًا" placeholder="أدخل ايميل المستلم">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>اسم الشارع</label>
+                                            <div class="controls">
+                                                <input type="text" name="text" class="form-control" data-validation-required-message="هذا الحقل مطلوب" placeholder="أدخل اسم الشارع لعنوان للمستلم">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>اسم او رقم المبنى</label>
+                                            <div class="controls">
+                                                <input type="text" name="text" class="form-control" data-validation-required-message="هذا الحقل مطلوب" placeholder="أدخل اسم او رقم المبنى ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label><h3>تفاصيل الشحنة</h3></label>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>محتويات الشحنة</label>
+                                            <div class="controls">
+                                               
+                                                <textarea name="shortDescription" id="shortDescription3" rows="2" data-validation-required-message="هذا الحقل مطلوب" class="form-control" placeholder="أدخل محتويات الشحنة بالتفصيل"></textarea>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                <div class="col-md-6">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>الوزن الاجمالي</label>
+                                            <div class="controls">
+                                                <input type="text" name="text" class="form-control" data-validation-required-message="هذا الحقل مطلوب" placeholder="أدخل الاسم الاخير للمستلم">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <label for="weight1">
+                                                    وحدة القياس
+                                                  </label>
+                                                  <select class="custom-select form-control required" id="weight1" name="weight1">
+                                                      <option value="kilogram">كغ</option>
+                                                      <option value="libra">Lb</option>
+                                                  </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>عدد القطع</label>
+                                        <div class="controls">
+                                            <input type="text" name="digit" class="form-control" data-validation-regex-regex="([^a-z]*[A-Z]*)*" data-validation-containsnumber-regex="([^0-9]*[0-9]+)+" data-validation-required-message="يجب ادخال عدد القطع" maxlength="3" minlength="1" placeholder="أدخل عدد القطع">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <section class="vuexy-radio">
+                                            <div class="row">                                               
+                                                <div class="col-12">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h4 class="card-title">نوع الشحنة</h4>
+                                                        </div>
+                                                        <div class="card-content">
+                                                            <div class="card-body">
+                                                                <ul class="list-unstyled mb-0">
+                                                                    <li class="d-inline-block mr-2">
+                                                                        <fieldset>
+                                                                            <div class="vs-radio-con">
+                                                                                <input type="radio" name="vueradio" checked value="false">
+                                                                                <span class="vs-radio">
+                                                                                    <span class="vs-radio--border"></span>
+                                                                                    <span class="vs-radio--circle"></span>
+                                                                                </span>
+                                                                                <span class="">وثائق</span>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </li>
+                                                                    <li class="d-inline-block mr-2">
+                                                                        <fieldset>
+                                                                            <div class="vs-radio-con">
+                                                                                <input type="radio" name="vueradio" value="false">
+                                                                                <span class="vs-radio">
+                                                                                    <span class="vs-radio--border"></span>
+                                                                                    <span class="vs-radio--circle"></span>
+                                                                                </span>
+                                                                                <span class="">طرد</span>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </li>                                                                      
+                                                                   
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                                <button type="submit" class="btn btn-primary">تسجيل</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                      <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">نجاح</h4>
+                        <p class="mb-0">
+                           تم ارسال الطرد من المركز الحالي
+                        </p>
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">خطأ</h4>
+                        <p class="mb-0">
+                           لم يتم تسجيل ارسال الطرد
+                        </p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     
+     
+    </div>
+
+    {% endblock appbody %} 
+    {% block appfooter %}
+
+    <script src="{% static '/app-assets/vendors/js/vendors.min.js' %}"></script>
+
+    <script src="{% static '/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+    <script src="{% static '/app-assets/vendors/js/extensions/jquery.steps.min.js' %}"></script>
+    <script src="{% static '/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js' %}"></script>
+
+    <script src="{% static '/app-assets/vendors/js/forms/validation/jquery.validate.min.js' %}"></script>
+
+    <script src="{% static '/app-assets/js/core/app-menu.js' %}"></script>
+    <script src="{% static '/app-assets/js/core/app.js' %}"></script>
+    <script src="{% static '/app-assets/js/scripts/components.js' %}"></script>
+
+    <script src="{% static '/assets/js/scripts.js' %}"></script>
+    <script src="{% static '/app-assets/js/scripts/forms/validation/form-validation.js' %}"></script>
+
+    {% endblock appfooter %}
+  </div>
+</div>

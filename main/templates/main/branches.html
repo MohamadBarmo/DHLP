@@ -1,0 +1,260 @@
+{% extends 'base.html' %} {% load static %} {% block appheader %}
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+  />
+  <meta
+    name="description"
+    content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities."
+  />
+  <meta
+    name="keywords"
+    content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app"
+  />
+  <meta name="author" content="PIXINVENT" />
+  <title>نظام تنظيم ومتابعة نقل الطرود</title>
+  <link
+    rel="apple-touch-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="{% static  '/app-assets/images/ico/logoico.ico'%}"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600"
+    rel="stylesheet"
+  />
+
+  <!-- BEGIN: Vendor CSS-->
+
+  
+  
+  
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/vendors/css/vendors-rtl.min.css'%}"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/vendors/css/forms/select/select2.min.css'%}">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/bootstrap-extended.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/colors.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/components.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/themes/dark-layout.css'%}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/themes/semi-dark-layout.css'%}"
+  />
+  <link rel="stylesheet" type="text/css" href="{% static  '/app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css'%}">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static  '/app-assets/css-rtl/core/colors/palette-gradient.css'%}"
+  />
+  
+ 
+  
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Cairo:300,400,600,700,800,900");
+    * {
+        font-family: "Cairo", sans-serif;
+    
+    }
+</style>
+</head>
+
+{% endblock appheader %} {% block appbody %}
+
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+  <div class="content-wrapper">
+    <div class="content-header row">
+      <div
+        class="content-header-center col-md-12 col-12"
+        style="margin-bottom: 0rem"   >
+        <div class="text-center d-xl-none d-lg-none d-md-block d-sm-block d-xs-block"
+          style="margin-bottom: 0rem; opacity: 0.5"  >
+          <img
+            src="{% static 'images/2-t-croped_50.png'%}"
+            class="img-fluid"
+            alt="Brand logo"
+            style="object-fit: contain; width: auto; height: 100px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="content-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">فروع الشركة في البلد المختارة</h4>
+            </div>
+            <div class="card-content">
+                <div class="card-body pb-0">
+                    <div class="card-text">                       
+                    </div>
+                </div>
+                
+                <div class="col-md-12 col-12">
+                  <div class="text-bold-600 font-medium-2">
+                      أختر البلد لعرض فروع الشركة في البلد المختار
+                  </div>
+                  <p></p>
+                  <fieldset class="form-group">
+                      <select class="form-control" id="basicSelect">
+                          <option>IT</option>
+                          <option>Blade Runner</option>
+                          <option>Thor Ragnarok</option>
+                      </select>
+                  </fieldset>
+              </div>
+             
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="row" id="table-contexual">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">سوريا دمشق</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                  <th>مسلسل</th>
+                                    <th>رمز الفرع</th>
+                                    <th>اسم الفرع</th>                                  
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-active">
+                                    <th scope="row">1</th>
+                                    <td>Leanne Graham</td>
+                                    <td>sincere@april.biz</td>
+                                   
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Ervin Howell</td>
+                                    <td>shanna@melissa.tv</td>
+                                   
+                                </tr>
+                                <tr class="table-primary">
+                                    <th scope="row">3</th>
+                                    <td>Clementine Bauch</td>
+                                    <td>Graham</td>
+                                   
+                                </tr>
+                                <tr class="table-success">
+                                    <th scope="row">4</th>
+                                    <td>Ervin</td>
+                                    <td>nathan@yesenia.net</td>
+                                  
+                                </tr>
+                                <tr class="table-warning">
+                                    <th scope="row">5</th>
+                                    <td>Clementine Bauch</td>
+                                    <td>nathan@yesenia.net</td>
+                                    
+                                </tr>
+                                <tr class="table-danger">
+                                    <th scope="row">6</th>
+                                    <td>Patricia Lebsack</td>
+                                    <td>julianne.OConner@kory.org</td>
+                                 
+                                </tr>
+                                <tr class="table-info">
+                                    <th scope="row">7</th>
+                                    <td>Chelsey Dietrich</td>
+                                    <td>lucio_Hettinger@annie.ca</td>
+                                    
+                                </tr>
+                                <tr class="table-light">
+                                    <th scope="row">8</th>
+                                    <td>Kurtis Weissnat</td>
+                                    <td>telly.Hoeger@billy.biz</td>
+                                
+                                </tr>
+                                <tr class="table-dark">
+                                    <th scope="row">9</th>
+                                    <td>Glenna Reichert</td>
+                                    <td>chaim_McDermott@dana.io</td>
+                                 
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+   
+    
+  
+  </div>
+
+  <!-- END: Content-->
+
+  {% endblock appbody %} {% block appfooter %}
+
+  <!-- BEGIN: Vendor JS-->
+  <script src="{% static '/app-assets/vendors/js/vendors.min.js' %}"></script>
+  <script src="{% static '/app-assets/vendors/js/ui/jquery.sticky.js' %}"></script>
+  <script src="{% static '/app-assets/vendors/js/forms/select/select2.full.min.js' %}"></script>
+  
+  <script src="{% static '/app-assets/js/core/app-menu.js' %}"></script>
+  <script src="{% static '/app-assets/js/core/app.js' %}"></script>
+  <script src="{% static '/app-assets/js/scripts/components.js' %}"></script>
+
+
+  <!-- END: number-input-->
+
+  
+
+  <script src="{% static '/app-assets/js/scripts/forms/select/form-select2.js' %}"></script>
+
+
+  
+  {% endblock appfooter %}
+</div>
